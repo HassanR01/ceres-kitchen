@@ -1,0 +1,24 @@
+#profileInfo {
+    position: relative;
+    flex-direction: column;
+}
+
+#profileInfo h2 {
+    color: red;
+}
+
+#profileInfo .info img {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50% , 0);
+    -webkit-transform: translate(-50% , 0);
+    -moz-transform: translate(-50% , 0);
+    -ms-transform: translate(-50% , 0);
+    -o-transform: translate(-50% , 0);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
