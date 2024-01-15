@@ -17,7 +17,6 @@ export default function Header() {
           <li><Link href={'/'}>Home</Link></li>
           <li><Link href={'/menu'}>menu</Link></li>
           <li><Link href={'/offer'}>offer</Link></li>
-          <li><Link href={'/order_track'}>order track</Link></li>
           <li><Link href={'/contact'}>contact</Link></li>
           <li><Link href={'/about'}>about</Link></li>
         </ul>
