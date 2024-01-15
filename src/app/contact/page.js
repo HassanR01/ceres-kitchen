@@ -5,7 +5,7 @@ export default function Contact() {
     <>
       <Title title={'Contact Us'} />
       <section>
-
+        <h1>contact page</h1>
       </section>
     </>
   )
