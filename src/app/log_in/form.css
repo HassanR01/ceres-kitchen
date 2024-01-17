@@ -1,7 +1,6 @@
 #login {
     flex-direction: column;
     background-position: center;
-    background-color: var(--Garn2-color);
 }
 
 #login h2 {

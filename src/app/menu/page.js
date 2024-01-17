@@ -9,13 +9,14 @@ export default function Menu() {
       <section id="itemsMenu">
         <div className="filters">
           <ul>
-            <li className="selected">All</li>
-            <li>Breakfast</li>
-            <li>Lunch</li>
-            <li>Dinner</li>
-            <li>Ready To Heat</li>
-            <li>Pre Cook</li>
-            <li>Pasta</li>
+            <li data-category='item' className="selected">All</li>
+            <li data-category='Ready_To_Heat'>Ready To Heat</li>
+            <li data-category='Pre_Cooked'>Pre Cooked</li>
+            <li data-category='Air_Fire'>Air Fire</li>
+            <li data-category='Bakery'>Bakery</li>
+            <li data-category='Appetizers'>Appetizers</li>
+            <li data-category='Salads'>Salads</li>
+            <li data-category='Service'>Service</li>
           </ul>
         </div>
         <div className={'items'}>

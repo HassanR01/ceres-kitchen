@@ -9,17 +9,6 @@ const itemSchema = new Schema(
         category: {
             type: String,
             require: true,
-            enum: [
-                "Breakfast",
-                "Lunch",
-                "Dinner",
-                "Ready_To_Heat",
-                "Pre_Cook",
-                "Pasta",
-                "Salad",
-                "Meet",
-            ],
-            message: "Please Choose Correct Category"
         },
         price: Number,
         reviews: [{

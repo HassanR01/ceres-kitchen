@@ -6,7 +6,15 @@ export async function PUT(request, { params }) {
     const { email } = params;
     const { orders, basket, name, passwrord, role } = await request.json();
     await connectMongoDB();
-    await User.findOneAndUpdate({ email: email }, { $push : {orders}, $push: { basket }, name, passwrord, role })
+    await User.findOneAndUpdate({ email: email }, {orders, $push : {basket}, name, passwrord, role })
+    return NextResponse.json({ message: 'User Updated' }, { status: 200 })
+}
+
+export async function PATCH(request, { params }) {
+    const { email } = params;
+    const { orders, basket, name, passwrord, role } = await request.json();
+    await connectMongoDB();
+    await User.findOneAndUpdate({ email: email }, { orders, $pull : {basket}, name, passwrord, role })
     return NextResponse.json({ message: 'User Updated' }, { status: 200 })
 }
 

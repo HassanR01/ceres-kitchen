@@ -57,12 +57,13 @@ export default function AddItems() {
               <input value={image} type="text" name="ImageURL" placeholder="EnterImage URL From Cloudnary" onChange={(e) => setImage(e.target.value)} />
               <input value={category} list="category" placeholder="Category" onChange={(e) => setCategory(e.target.value)} />
               <datalist id="category">
-                  <option value="Breakfast" >Breakfast</option>
-                  <option value="Lunch" >Lunch</option>
-                  <option value="Dinner" >Dinner</option>
                   <option value="Ready_To_Heat" >Ready To Heat</option>
-                  <option value="Pre_Cook" >Pre Cook</option>
-                  <option value="Pasta" >Pasta</option>
+                  <option value="Pre_Cooked" >Pre Cooked</option>
+                  <option value="Air_Fire" >Air Fire</option>
+                  <option value="Bakery" >Bakery</option>
+                  <option value="Appetizers" >Appetizers</option>
+                  <option value="Salads" >Salads</option>
+                  <option value="Service" >Service</option>
               </datalist>
               <input value={price} type="number" min={0} placeholder="Enter Price" onChange={(e) => setPrice(e.target.value)} />
               <button type="Submit">

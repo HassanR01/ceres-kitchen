@@ -1,6 +1,7 @@
 import Title from "@/src/components/Title"
 import Image from "next/image"
 import './basket.css'
+import RemoveFromCart from "@/src/components/removeFromCart"
 
 const getUserbyEmail = async (email) => {
   const apiUrl = process.env.API_URL
@@ -40,7 +41,7 @@ export default async function Basket({ params }) {
               <h3>{item.title}</h3>
               <h3>{item.quantity} KG</h3>
               <h4>{item.price * item.quantity} EGP</h4>
-              <button>Cancel</button>
+              <RemoveFromCart email={user.email} item={item} />
             </div>
           ))}
         </div>

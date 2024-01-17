@@ -1,33 +1,39 @@
-'use client'
+
 import Image from "next/image"
-import Link from "next/link"
-import Bgimage from '../../public/bg.png'
-import Interior from '../../public/cereskitcheninterior.png'
-import Swiper from '../components/swiper'
+import WLogo from '../../public/ckwhite.svg'
 import Sellingorder from "../components/Sellingorder"
-import { useSession } from "next-auth/react"
+import ItemsList from "../components/ItemsList"
 
 export default function Home() {
   let items = ['chicken', 'cook', 'salat']
-  const { status, data: session } = useSession();
 
   return (
     <>
       {/* Home Section */}
-      <section id="home" style={{
-        backgroundImage: `url(${Bgimage.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
+      <section id="home">
         <div className={'text'}>
+          <Image src={WLogo} width={260} height={130} alt="Ceres Kitchen Logo" />
           <h1>Enjoy Our <span>Delicious</span> Food</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nemo voluptates at suscipit dicta doloribus iste iure! Rem magnam quo consequatur accusantium id delectus, omnis sequi nisi reprehenderit illo?</p>
-          <div className={'links'}>
-            <Link href={'/'}>Order Now</Link>
-            <Link href={'/menu'}>Menu</Link>
-          </div>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nemo voluptates at suscipit dicta doloribus iste</p>
         </div>
 
+      </section>
+
+      <section id="itemsMenuHP">
+        <div className="filters">
+          <ul>
+            <li data-category='Ready_To_Heat'>Ready To Heat</li>
+            <li data-category='Pre_Cooked'>Pre Cooked</li>
+            <li data-category='Air_Fire'>Air Fire</li>
+            <li data-category='Bakery'>Bakery</li>
+            <li data-category='Appetizers'>Appetizers</li>
+            <li data-category='Salads'>Salads</li>
+            <li data-category='Service'>Service</li>
+          </ul>
+        </div>
+        <div className={'items'}>
+          <ItemsList />
+        </div>
       </section>
 
       {/* Expect Section */}
@@ -48,12 +54,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Show Categories Section */}
-      <section id="categories">
-        <h2>Popular Categories</h2>
-        <Swiper />
-      </section>
-
       {/* recommendation Section */}
       <section id="rec">
         <div className={'image'}>
@@ -67,27 +67,6 @@ export default function Home() {
             <Sellingorder name='order 1' price='$50' items={`${items.join('; ')}`} />
             <Sellingorder name='order 1' price='$50' items={`${items.join('; ')}`} />
           </div>
-        </div>
-      </section>
-
-      {/* Service Section */}
-      <section id="service">
-        <div className={'text'}>
-          <h2>Fast Food <span>Delivery</span> in city</h2>
-          <p>Food Brings  People Together On Many Different Levels, it's Nourishment Of The Soul And Body</p>
-          <div className={'features'}>
-            <div className={'feature'}>
-              <Image src={'/clock.png'} width={50} height={50} alt="feature icon" />
-              <h5>This is A Feature</h5>
-            </div>
-            <div className={'feature'}>
-              <Image src={'/medal.png'} width={50} height={50} alt="feature icon" />
-              <h5>This is A Feature</h5>
-            </div>
-          </div>
-        </div>
-        <div className={'image'}>
-          <Image src={'/delivery.svg'} width={500} height={500} alt="lunch time" />
         </div>
       </section>
 

@@ -4,12 +4,7 @@ import Bgimg from '../../../public/bg.png'
 export default function LogIn() {
   return (
     <>
-      <section
-        style={{
-          backgroundImage: `url(${Bgimg.src})`,
-          backgroundSize: 'cover'
-        }}
-        id="login">
+      <section id="login">
         <h2>Login Form</h2>
         <LoginForm />
       </section>

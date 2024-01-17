@@ -90,7 +90,7 @@
   outline: none;
   border: none;
   margin: 0 10px;
-  background-color: var(--Bg-color);
+  background-color: transparent;
   color: var(--Garn-color);
 }
 

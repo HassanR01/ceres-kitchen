@@ -1,0 +1,63 @@
+/* abouts */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#about h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    color: var(--Text-color);
+}
+
+#about .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#about .info .text h2 {
+  font-size: 3.5rem;
+  color: var(--Text-color);
+}
+#about .info .text h2 span {
+  font-weight: 900;
+  color: var(--Garn-color);
+}
+
+#about .info .text p {
+  color: var(--Text-color);
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+#about .info .text .features {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#about .info .text .features .feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+#about .info .text .features .feature img {
+  margin: 0 20px 0 0;
+  background-color: var(--Text-color);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#about .info .text .features .feature h5 {
+  font-size: 1.5rem;
+  color: var(--Text-color);
+}

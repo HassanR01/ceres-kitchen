@@ -9,9 +9,6 @@ export default function Header() {
   const Admins = ["hassanrageh.236@gmail.com", "pavarotie@yahoo.com", "hkrock236@gmail.com"]
   return (
     <header>
-      <div className={'logo'}>
-        <Image src={'/ckwhite.svg'} width={100} height={70} alt="Ceres Kitchen Logo" />
-      </div>
       <nav className={'menu'}>
         <ul>
           <li><Link href={'/'}>Home</Link></li>

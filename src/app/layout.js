@@ -2,6 +2,7 @@ import Cursor from '../components/Cursor'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import './globals.css'
+import Bgimage from '../../public/bg.png'
 import Script from 'next/script'
 import { NextAuthProvider } from './providers'
 
@@ -13,13 +14,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} style={{
+        backgroundImage: `url(${Bgimage.src})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center'
+      }}>
         <NextAuthProvider>
           <Header />
           {children}
-          <Script src='JS/main.js' />
           <Cursor />
           <Footer />
+          <Script src='JS/main.js' />
         </NextAuthProvider>
       </body>
     </html>
