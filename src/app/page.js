@@ -4,16 +4,17 @@ import WLogo from '../../public/ckwhite.svg'
 import Sellingorder from "../components/Sellingorder"
 import ItemsList from "../components/ItemsList"
 
+
+
 export default function Home() {
   let items = ['chicken', 'cook', 'salat']
-
   return (
     <>
       {/* Home Section */}
       <section id="home">
         <div className={'text'}>
           <Image src={WLogo} width={260} height={130} alt="Ceres Kitchen Logo" />
-          <h1>Enjoy Our <span>Delicious</span> Food</h1>
+          <h1><span>Delicious</span> Kitchen</h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nemo voluptates at suscipit dicta doloribus iste</p>
         </div>
 

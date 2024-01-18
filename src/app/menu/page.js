@@ -5,7 +5,7 @@ import ItemsList from "@/src/components/ItemsList";
 export default function Menu() {
   return (
     <>
-      <Title title={'Menu'} />
+      <Title title={'Check our tasty Menu'} />
       <section id="itemsMenu">
         <div className="filters">
           <ul>

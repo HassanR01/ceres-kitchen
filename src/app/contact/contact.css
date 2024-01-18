@@ -101,7 +101,6 @@
 #contact .contact .form .message input,
 #contact .contact .form .message textarea {
   width: 100%;
-  max-width: 1000px;
   padding: 5px 10px;
   margin: 0 20px 0 0;
   font-size: 1.5rem;
@@ -120,8 +119,9 @@
 }
 
 #contact .contact .form .message textarea {
-  height: 250px;
-  margin: 30px 0;
+    height: 250px;
+    margin: 30px 0;
+    max-width: 1000px;
 }
 
 #contact .contact .form form button {

@@ -1,15 +1,19 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
-export default function SendToBasket({ title, price , image }) {
+export default function SendToBasket({ title, price, image }) {
+    const [Cart, setCart] = useState([])
     const { status, data: session } = useSession()
     const [quantity, setQuantity] = useState("")
-    const basket = { quantity, title, price , image }
+    const basket = { quantity, title, price, image }
     price = price * quantity
-    const router = useRouter()
+    useEffect(() => {
+        const cartFromLS = localStorage.getItem('CartItems')
+        if (cartFromLS) {
+            setCart(JSON.parse(cartFromLS))
+        }
+    }, [])
     const sendOrderToBasket = async (e) => {
         e.preventDefault()
 
@@ -17,50 +21,50 @@ export default function SendToBasket({ title, price , image }) {
             alert('Quantity is required!')
         } else {
 
-            try {
-                const res = await fetch(`/api/users/${session?.user?.email}`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({ basket }),
-                })
+            if (status === 'authenticated') {
+                try {
+                    const res = await fetch(`/api/users/${session?.user?.email}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-type": "application/json"
+                        },
+                        body: JSON.stringify({ basket }),
+                    })
 
-                if (!res.ok) {
-                    throw new Error("Cannot add the Item")
-                } else {
-                    location.replace(`/basket/${session?.user?.email}`)
+                    if (!res.ok) {
+                        throw new Error("Cannot add the Item")
+                    } else {
+                        location.replace(`/basket?email=${session?.user?.email}`)
+                    }
+                    
+                } catch (error) {
+                    console.log(error);
                 }
-
-            } catch (error) {
-                console.log(error);
+                
             }
+            
+            const updatCart = [...Cart, basket]
+            setCart(updatCart)
+            console.log(basket);
+            localStorage.setItem('CartItems', JSON.stringify(updatCart))
+            location.replace(`/basket?email=${session?.user?.email}`)
+            setQuantity('')
         }
-
     }
 
-    if (status === 'authenticated') {
-
-        return (
-            <>
-                <form onSubmit={sendOrderToBasket}>
-                    <div className="quantity">
-                        <h4>Quantity:</h4>
-                        <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="0" min={1} max={1000} />
-                        <span>KG</span>
-                    </div>
-                    <h5>{price} EGP</h5>
-                    <button>
-                        Add To Basket
-                    </button>
-                </form>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <Link href={'/log_in'}>Sign In To Order</Link>
-            </>
-        )
-    }
+    return (
+        <>
+            <form onSubmit={sendOrderToBasket}>
+                <div className="quantity">
+                    <h4>Quantity:</h4>
+                    <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="0" min={1} max={1000} />
+                    <span>KG</span>
+                </div>
+                <h5>{price} EGP</h5>
+                <button>
+                    Add To Basket
+                </button>
+            </form>
+        </>
+    )
 }

@@ -38,7 +38,7 @@ export default async function GetUsers() {
               <h3>{user.name}</h3>
               <h3 title={user.email}>{user.email.slice(0 , 6)}..</h3>
               <h3>{user.role}</h3>
-              <h3>{user.basket.length} Item</h3>
+              <h3>{user.orders.length} Item</h3>
               <MakeAdmin role={user.role} email={user.email} />
             </div>
           ))}

@@ -1,0 +1,136 @@
+#basket {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#basket .items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#basket .items .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Text-color);
+  padding: 10px;
+  border-left: 5px solid var(--Garn-color);
+  margin: 20px 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#basket .items .item img {
+  height: auto;
+  width: 150px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#basket .items .item h3 {
+  font-size: 1.5rem;
+  color: var(--Bg-color);
+}
+
+#basket .items .item h4 {
+  font-size: 1.8rem;
+  color: green;
+}
+
+#basket .items .item button {
+  background-color: red;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#basket .orderNow {
+    min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+#basket .orderNow form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#basket .orderNow form input {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--Main-font-english);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--Text-color);
+  border-bottom: 5px solid var(--Garn-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#basket .orderNow h2 {
+  font-size: 1.8rem;
+  color: #00ff00;
+  margin-bottom: 10px;
+}
+
+#basket .orderNow button {
+  background-color: var(--Garn-color);
+  width: 250px;
+  border: none;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#basket .orderNow button:hover {
+  background-color: #00ff00;
+}
