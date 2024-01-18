@@ -247,7 +247,8 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: var(--Bg-color);
-  border-left: 10px solid var(--Garn-color);
+  border-left: 5px solid var(--Garn-color);
+  border-right: 5px solid var(--Garn-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -339,7 +340,6 @@ header {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  cursor: pointer;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;

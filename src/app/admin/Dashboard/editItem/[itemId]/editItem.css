@@ -1,0 +1,119 @@
+h4 {
+  color: var(--Text-color);
+}
+
+/* Add Item Partition Style */
+
+#editItem {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center !important;
+}
+
+#editItem h2 {
+  font-size: 2rem;
+  color: var(--Text-color);
+  margin-bottom: 50px;
+}
+
+#editItem form {
+  max-width: 1500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 10px;
+  background-color: var(--Bg-color);
+  border-top: 5px solid var(--Garn-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#editItem form .inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#editItem form .inputs input,
+#editItem form .inputs textarea {
+  width: calc(100% / 3);
+  min-width: 250px;
+  margin: 10px;
+  padding: 10px;
+  max-height: 300px;
+  font-family: var(--Main-font);
+  font-size: 1.3rem;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid var(--Garn-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: var(--Bg-color);
+  color: var(--Text-color);
+}
+
+#editItem form button {
+  margin: 20px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--Main-font);
+  color: var(--Bg-color);
+  padding: 5px 30px;
+  background-color: var(--Garn-color);
+  border: 2px solid var(--Text-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+#editItem form button:hover {
+  background-color: #00ff00;
+}
+
+#editItem > button {
+  margin-top: 50px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--Main-font);
+  color: var(--Bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  width: 250px;
+  background-color: var(--Garn-color);
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#editItem > button:hover {
+  background-color: #ff0000;
+}

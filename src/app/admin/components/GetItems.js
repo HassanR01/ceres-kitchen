@@ -35,7 +35,7 @@ export default async function GetItems() {
                                 <h3>{item.title}</h3>
                                 <h3>{item.createdAt}</h3>
                                 <h3>{item.rate} Stars</h3>
-                                <h3>{item.price} EGP</h3>
+                            <h3 style={{ color: '#00ff00'}}>{item.price} EGP</h3>
                         </Link>
                     ))}
                     {items.length === 0 && (<h2>No Items Exist</h2>)}

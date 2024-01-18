@@ -1,9 +1,28 @@
 import React from 'react'
+import EditItemForm from '../../../components/EditItemForm'
+import './editItem.css'
+const getItemToEdit = async (id) => {
+  const apiUrl = process.env.API_URL
+  const res = await fetch(`${apiUrl}/api/items/${id}`, {
+    cache: 'no-store'
+  })
 
-export default function ItemDetails({ params }) {
+  if (res.ok) {
+    return res.json()
+  } else {
+    throw new Error("Faild to get the item")
+  }
+}
+
+export default async function ItemDetails({ params }) {
   const { itemId } = params;
-  console.log(itemId);
+  const { item } = await getItemToEdit(itemId)
+  const { _id , image, title, description, category, price } = item
   return (
-    <div>ItemDetails</div>
+    <>
+      <section id='editItem'>
+        <EditItemForm id={_id} image={image} title={title} description={description} category={category} price={price} />
+      </section>
+    </>
   )
 }
