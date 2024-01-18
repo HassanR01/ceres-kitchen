@@ -34,6 +34,7 @@
 #login form input:focus {
     outline: none;
     background-color: var(--Bg-color);
+    color: var(--Text-color);
 }
 
 #login form button {

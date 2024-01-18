@@ -9,18 +9,32 @@ export default function MakeAdmin({ role, email }) {
   }
 
   const changeUser = async () => {
+    if (role === 'visitor') {
+      await fetch(`/api/admins?email=${email}`, {
+        method: "DELETE",
+      })
+    } else {
+      await fetch('/api/admins', {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      })
+    }
     const confirmed = confirm("Are You Sure ?")
 
     if (confirmed) {
-      const res = await fetch(`/api/users/${email}`, {
+      const resU = await fetch(`/api/users/${email}`, {
         method: "PUT",
         headers: {
           "Content-type": 'application/json'
         },
-        body: JSON.stringify({role})
+        body: JSON.stringify({ role })
       })
 
-      if (res.ok) {
+
+      if (resU.ok) {
         location.reload()
       } else {
         throw new Error("Cannot Change The User!")
@@ -28,10 +42,10 @@ export default function MakeAdmin({ role, email }) {
 
     }
   }
-  
+
   return (
     <>
-        {role === 'visitor' && (<button onClick={changeUser}>Make visitor</button>)}
+      {role === 'visitor' && (<button onClick={changeUser}>Make visitor</button>)}
       {role === 'admin' && (<button onClick={changeUser}>Make Admin</button>)}
     </>
   )

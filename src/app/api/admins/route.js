@@ -16,7 +16,7 @@ export async function GET() {
 }
 
 export async function DELETE(request) {
-    const { email } = request.nextUrl.searchParams.get('email')
+    const email = request.nextUrl.searchParams.get("email")
     await connectMongoDB()
     await Admins.findOneAndDelete({ email : email })
     return NextResponse.json({ message: "User Deleted" }, { status: 200 })

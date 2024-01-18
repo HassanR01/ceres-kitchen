@@ -1,24 +1,155 @@
 #profileInfo {
-    position: relative;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 #profileInfo h2 {
-    color: red;
+  color: red;
 }
 
 #profileInfo .info img {
-    position: absolute;
-    top: -60px;
-    left: 50%;
-    border-radius: 50%;
-    transform: translate(-50% , 0);
-    -webkit-transform: translate(-50% , 0);
-    -moz-transform: translate(-50% , 0);
-    -ms-transform: translate(-50% , 0);
-    -o-transform: translate(-50% , 0);
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#profileInfo .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#profileInfo .info h3 {
+  font-size: 2rem;
+  color: var(--Text-color);
+}
+
+#profileInfo .info h5 {
+  font-size: 1.3rem;
+  color: var(--Text-color);
+}
+
+#profileInfo .info .orderslist h2 {
+  font-size: 2rem;
+  color: var(--Text-color);
+  margin-bottom: 30px;
+}
+
+#profileInfo .info .orderslist {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000044;
+  backdrop-filter: blur(5px);
+  margin: 20px 0;
+  padding: 20px;
+  border-top: 5px solid var(--Garn-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#profileInfo .info .orderslist .evid {
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#profileInfo .info .orderslist .evid h3 {
+  font-size: 1.5rem;
+  color: var(--Text-color);
+}
+
+#profileInfo .info .orderslist .orders {
+  width: 100%;
+  min-height: 50vh;
+  padding: 10px;
+  background-color: rgba(92, 87, 87, 0.451);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#profileInfo .info .orderslist .orders .order {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #00000080;
+  border-radius: 10px;
+  border-left: 5px solid var(--Garn-color);
+  border-right: 5px solid var(--Garn-color);
+  margin: 0 0 10px 0;
+  transition: all 0.5s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#profileInfo .info .orderslist .orders .order:hover {
+    background-color: #000000a2;
+}
+
+#profileInfo .info .orderslist .orders .order h3 {
+  font-size: 1.3rem;
+}
+
+#profileInfo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--Main-font);
+  color: var(--Bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+    width: 250px;
+  background-color: var(--Garn-color);
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#profileInfo a:hover {
+    background-color: #ff0000;
 }
