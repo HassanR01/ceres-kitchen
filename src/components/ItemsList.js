@@ -31,6 +31,7 @@ export default async function ItemsList() {
                     </div>
                     <div className="text">
                         <h3>{item.title}</h3>
+                        <h3>{item.titleAr}</h3>
                         <p>{item.description.slice(0,50)}..</p>
                         <h5>{item.price} EGP</h5>
                     </div>

@@ -4,6 +4,7 @@ import { useState } from "react"
 
 export default function AddItems() {
     const [ title, setTitle ] = useState("");
+    const [ titleAr, setTitleAr ] = useState("");
     const [ description, setDescription ] = useState("");
     const [ _id , set_Id ] = useState("");
     const [ image , setImage ] = useState("");
@@ -14,7 +15,7 @@ export default function AddItems() {
     const handelSubmit = async (e) => {
         e.preventDefault()
          
-        if (!title || !description || !_id || !image || !category || !price) {
+        if (!title || !titleAr || !description || !_id || !image || !category || !price) {
             alert('All Details are required!')
             return;
         }
@@ -26,7 +27,7 @@ export default function AddItems() {
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify({
-                    title, description, _id, image, category, price
+                    title, titleAr, description, _id, image, category, price
                 })
             })
 
@@ -34,6 +35,7 @@ export default function AddItems() {
             if (res.ok) {
                 alert('Added Successfully')
                 setTitle("")
+                setTitleAr("")
                 setDescription("")
                 set_Id("")
                 setImage("")
@@ -52,6 +54,7 @@ export default function AddItems() {
       <>
         <form onSubmit={handelSubmit}>
               <input value={title} type="text" name="Title" placeholder="Enter The Name of The Item" onChange={(e) => setTitle(e.target.value)} />
+              <input value={titleAr} type="text" name="TitleAr" placeholder="Enter The Name of The Item In Arabic" onChange={(e) => setTitleAr(e.target.value)} />
               <textarea value={description} type="text" name="Description" placeholder="Enter Small Description about The Item" onChange={(e) => setDescription(e.target.value)} />
               <input value={_id.replaceAll(" " , "_")} type="text" name="ID" placeholder="Ex: www.Domain.com/menu/{Item Id}" onChange={(e) => set_Id(e.target.value)} />
               <input value={image} type="text" name="ImageURL" placeholder="EnterImage URL From Cloudnary" onChange={(e) => setImage(e.target.value)} />
