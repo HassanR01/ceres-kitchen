@@ -1,9 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 
-export default function EditItemForm({ id, image, title, description, category, price }) {
+export default function EditItemForm({ id, image, title, titleAr, description, category, price }) {
     const [newimage, setNewImage] = useState(image);
     const [newtitle, setNewTitle] = useState(title);
+    const [newtitleAr, setNewTitleAr] = useState(titleAr);
     const [newdescription, setNewDescription] = useState(description);
     const [newcategory, setNewCategory] = useState(category);
     const [newprice, setNewPrice] = useState(price)
@@ -17,7 +18,7 @@ export default function EditItemForm({ id, image, title, description, category, 
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({newimage, newtitle, newdescription, newcategory, newprice})
+                body: JSON.stringify({newimage, newtitle, newtitleAr, newdescription, newcategory, newprice})
             })
 
             if (res.ok) {
@@ -47,6 +48,7 @@ export default function EditItemForm({ id, image, title, description, category, 
             <form onSubmit={handelEditItemForm}>
                 <div className='inputs'>
                     <input value={newtitle} type="text" name="Title" placeholder="Enter The Name of The Item" onChange={(e) => setNewTitle(e.target.value)} />
+                    <input value={newtitleAr} type="text" name="Title" placeholder="Enter The Name of The Item In Arabic" onChange={(e) => setNewTitleAr(e.target.value)} />
                     <input value={newimage} type="text" name="ImageURL" placeholder="EnterImage URL From Cloudnary" onChange={(e) => setNewImage(e.target.value)} />
                     <input value={newcategory} list="category" placeholder="Category" onChange={(e) => setNewCategory(e.target.value)} />
                     <datalist id="category">
