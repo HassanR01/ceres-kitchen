@@ -48,7 +48,7 @@ export default function basket({ searchParams }) {
           <section id="basket">
               <div className="items">
                   {cart.length > 0 && cart.map((item , index) => (
-                      <div className="item" key={item._id}>
+                      <div className="item" key={index}>
                           <Image src={item.image} width={100} height={70} alt={item.title} />
                           <h3>{item.title}</h3>
                           <h3>{item.quantity} KG</h3>
