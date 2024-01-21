@@ -1,8 +1,8 @@
-const selectBtns = document.querySelectorAll('.filters ul li')
-selectBtns.forEach(selectCtg => {
+const selectfilter = document.querySelectorAll('.filters ul li')
+selectfilter.forEach(selectCtg => {
     selectCtg.addEventListener('mouseover', () => {
         const Items = document.querySelectorAll('.items .item')
-        selectBtns.forEach(sc => {
+        selectfilter.forEach(sc => {
             sc.classList.remove('selected')
         })
         Items.forEach(item => {
