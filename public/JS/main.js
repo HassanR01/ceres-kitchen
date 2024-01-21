@@ -4,7 +4,7 @@ let year = new Date().getFullYear()
 text.innerHTML =+ year
 
 
-const selectCtgs = document.querySelectorAll('.filters ul li')
+const selectCtgs = document.querySelectorAll('#itemsMenuHP .filters ul li')
 selectCtgs.forEach(selectCtg => {
     selectCtg.addEventListener('mouseover', () => {
         const allItems = document.querySelectorAll('.items .item')
@@ -15,7 +15,6 @@ selectCtgs.forEach(selectCtg => {
             item.classList.remove('active')
         })
         selectCtg.classList.add('selected')
-        console.log(selectCtg.dataset.category);
         document.querySelectorAll(`.items .${selectCtg.dataset.category}`).forEach(item => {
             item.classList.add('active')
         })

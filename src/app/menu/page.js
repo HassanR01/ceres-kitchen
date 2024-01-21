@@ -1,6 +1,7 @@
 import Title from "@/src/components/Title"
 import './menu.css'
 import ItemsList from "@/src/components/ItemsList";
+import Script from "next/script";
 
 export default function Menu() {
   return (
@@ -23,6 +24,7 @@ export default function Menu() {
           <ItemsList />
         </div>
       </section>
+      <Script src="JS/menu.js" />
     </>
   )
 }

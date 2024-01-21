@@ -17,11 +17,11 @@ const getItemToEdit = async (id) => {
 export default async function ItemDetails({ params }) {
   const { itemId } = params;
   const { item } = await getItemToEdit(itemId)
-  const { _id , image, title, description, category, price } = item
+  const { _id , image, title, titleAr, description, category, price } = item
   return (
     <>
       <section id='editItem'>
-        <EditItemForm id={_id} image={image} title={title} description={description} category={category} price={price} />
+        <EditItemForm id={_id} image={image} title={title} titleAr={titleAr} description={description} category={category} price={price} />
       </section>
     </>
   )

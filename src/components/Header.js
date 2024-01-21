@@ -27,7 +27,6 @@ export default function Header({ admins }) {
         <ul>
           <li><Link href={'/'}>Home</Link></li>
           <li><Link href={'/menu'}>menu</Link></li>
-          <li><Link href={'/offer'}>offers</Link></li>
           <li><Link href={'/contact'}>contact</Link></li>
           <li><Link href={'/about'}>about</Link></li>
         </ul>

@@ -98,7 +98,7 @@ header {
 }
 
 #dashboard .partitions .partition {
-  padding: 70px 20px 0;
+  padding: 20px;
   height: 100%;
   width: 100%;
   display: none;
@@ -107,9 +107,235 @@ header {
   justify-content: flex-start;
 }
 
+#dashboard .partitions .partition > h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
 #dashboard .partitions .partition.active {
   display: flex;
 }
+
+/* Overviews partition Style */
+#overviews {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  padding: 20px;
+}
+
+#overviews .dataAnalysisPartitions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition {
+  width: calc(100% / 3);
+  max-width: 350px;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition:hover {
+  background-color: aliceblue;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .title {
+  margin: 0 0 10px;
+  width: 100%;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .title h3 {
+  font-size: 1.5rem;
+  color: #272625;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .data {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .data h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .data p {
+  color: #272625;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .data span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  padding: 1px 30px;
+  background-color: aqua;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition .percentage {
+  width: 100%;
+  height: 20px;
+  background-color: #00ff00;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.TO .data span {
+  background-color: #0064fa;
+  color: white;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.TO .percentage {
+  background-color: #0064fa;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.OD .data span {
+  background-color: #00fa53;
+  color: var(--Bg-color);
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.OD .percentage {
+  background-color: #00fa53;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.DS .data span {
+  background-color: #fa007d;
+  color: white;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.DS .percentage {
+  background-color: #fa007d;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.NC .data span {
+  background-color: #00fad0;
+}
+
+#overviews .dataAnalysisPartitions .dataAnalysisPartition.NC .percentage {
+  background-color: #00fad0;
+}
+
+/* Orders Partition Style */
+
+#orderList {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#orderList h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+#orderList .orderList {
+  position: relative;
+  background-color: var(--Bg-color);
+  width: 100%;
+  height: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  border-top: 4px solid var(--Garn-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#orderList .orderList .evid {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#orderList .orderList .evid h3 {
+  font-size: 1.5rem;
+  color: var(--Text-color);
+}
+
+#orderList .orderList .orders {
+  width: 100%;
+  height: calc(100% - 100px);
+  padding: 10px;
+  background-color: #272625;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+#orderList .orderList .orders .order {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Bg-color);
+  border-left: 5px solid var(--Garn-color);
+  border-right: 5px solid var(--Garn-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#orderList .orderList .orders .order:hover {
+  background-color: #201f1d;
+}
+
+#orderList .orderList .orders .order h3 {
+  font-size: 1.3rem;
+}
+
 
 /* Add Item Partition Style */
 
@@ -123,8 +349,9 @@ header {
 }
 
 #addItems form {
-  height: 80%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -138,8 +365,16 @@ header {
   -o-border-radius: 10px;
 }
 
-#addItems form input,
-#addItems form textarea {
+#addItems form .inputs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#addItems form .inputs input,
+#addItems form .inputs textarea {
   width: calc(90% / 2);
   margin: 10px;
   padding: 10px;
@@ -193,6 +428,12 @@ header {
 #items h2 {
   font-size: 2rem;
   margin-bottom: 50px;
+}
+
+#items .ItemList > h5 {
+  font-size: 1.1rem;
+  color: var(--Text-color);
+  margin: 3px 0;
 }
 
 #items .ItemList {
@@ -368,5 +609,4 @@ header {
 
 #users .usersList .users .user button:hover {
   background-color: #00ff00;
-
 }

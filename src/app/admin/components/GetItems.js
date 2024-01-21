@@ -20,6 +20,15 @@ const getItems = async () => {
 
 export default async function GetItems() {
     const { items } = await getItems();
+    let sum = 0
+    let quality = 0
+
+    for (let i = 0; i < items.length; i++) {
+        sum += items[i].rate        
+        quality = Math.round(sum / items.length)
+    }
+    console.log(quality);
+
     return (
         <>
             <div className='ItemList'>
@@ -40,6 +49,8 @@ export default async function GetItems() {
                     ))}
                     {items.length === 0 && (<h2>No Items Exist</h2>)}
                 </div>
+                <h5>Items: {items.length} item</h5>
+                <h5>Quality: {quality} Stars</h5>
             </div>
         </>
     )

@@ -9,15 +9,21 @@ import { NextAuthProvider } from './providers'
 
 const getAdmins = async () => {
   const apiUrl = process.env.API_URL
-  const res = await fetch(`${apiUrl}/api/admins`, {
-    cache: "no-store"
-  })
-  
-  if (!res.ok) {
-    throw new Error('Faild to Get the Admins')
+  try {
+    
+    const res = await fetch(`${apiUrl}/api/admins`, {
+      cache: "no-store"
+    })
+    
+    if (!res.ok) {
+      throw new Error('Faild to Get the Admins')
+    }
+    return res.json()
+
+  } catch (error) {
+    console.log(error);
   }
   
-  return res.json()
 }
 
 export const metadata = {

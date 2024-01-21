@@ -17,7 +17,7 @@
 #itemsMenu .items .item {
   height: 350px;
   width: calc(90% / 3);
-  max-width: 400px;
+  max-width: 500px;
   margin: 20px;
   display: none;
   flex-direction: column;
@@ -50,7 +50,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100% - 115px);
+  height: calc(100% - 105px);
 }
 
 #itemsMenu .items .item .image img {
@@ -71,6 +71,11 @@
 #itemsMenu .items .item .text h3 {
   font-size: 1.5rem;
   color: var(--Bg-color);
+}
+
+#itemsMenu .items .item .text h3:nth-child(2) {
+  width: 100%;
+  text-align: right;
 }
 
 #itemsMenu .items .item .text p {
@@ -98,6 +103,7 @@
 #itemsMenu .filters ul {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   justify-content: space-around;
@@ -106,6 +112,7 @@
 #itemsMenu .filters ul li {
   font-size: 1.3rem;
   font-weight: 700;
+  margin: 10px;
   padding: 5px 20px;
   border: 2px solid var(--Text-color);
   cursor: pointer;

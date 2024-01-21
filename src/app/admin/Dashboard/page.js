@@ -1,14 +1,11 @@
-import Image from "next/image";
 import './dashboard.css'
 import Script from "next/script";
 import Overviews from "../components/Overviews";
 import AddItems from "../components/AddItems";
 import GetUsers from "../components/GetUsers";
 import GetItems from "../components/GetItems";
-import AddOffers from "../components/AddOffers";
 import Orders from "../components/Orders";
 import UserInfo from "../components/UserInfo";
-
 
 export default function Dashboard() {
     return (
@@ -17,9 +14,8 @@ export default function Dashboard() {
           <div className={'partitionSelection'}>
             <UserInfo />
             <ul>
-              <li data-part='overviews'>Overviews</li>
+              <li data-part='overviews' className="selected">Overviews</li>
               <li data-part='orderList'>Order List</li>
-              <li data-part='offers'>Offers</li>
               <li data-part='items'>Items</li>
               <li data-part='addItems'>Add Items</li>
               <li data-part='users'>Users</li>
@@ -27,7 +23,7 @@ export default function Dashboard() {
           </div>
           <div className={'partitions'}>
             {/* Overviews */}
-            <div id="overviews" className={'partition'}>
+            <div id="overviews" className={'partition active'}>
               <h2>Overviews</h2>
               <Overviews />
             </div>
@@ -36,12 +32,6 @@ export default function Dashboard() {
             <div id="orderList" className={'partition'}>
               <h2>Order List</h2>
               <Orders />
-            </div>
-
-            {/* Offers */}
-            <div id="offers" className={'partition'}>
-              <h2>Offers</h2>
-              <AddOffers />
             </div>
 
             {/* Items */}
@@ -57,7 +47,7 @@ export default function Dashboard() {
             </div>
 
             {/* Users */}
-            <div id="users" className={'partition active'}>
+            <div id="users" className={'partition'}>
               <h2>Users</h2>
               <GetUsers />
             </div>
