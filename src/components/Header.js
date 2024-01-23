@@ -36,7 +36,12 @@ export default function Header({ admins }) {
           {status === 'authenticated' ? ((
             <>
               { Admins.includes(session?.user?.email) ? (
-                <li><Link href={'/admin/Dashboard'}><Image src={'/dashboard.svg'} width={40} height={40} alt="Dashboard" /></Link></li>
+                <li><Link href={{
+                  pathname: '/admin',
+                  query: {
+                    email: `${session?.user?.email}`,
+                  }
+                }}><Image src={'/dashboard.svg'} width={40} height={40} alt="Dashboard" /></Link></li>
               ) : (
                   <li><Link href={{
                     pathname: `/basket`,

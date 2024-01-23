@@ -1,5 +1,5 @@
 import React from 'react'
-import EditItemForm from '../../../components/EditItemForm'
+import EditItemForm from '../../components/EditItemForm'
 import './editItem.css'
 const getItemToEdit = async (id) => {
   const apiUrl = process.env.API_URL
@@ -17,7 +17,7 @@ const getItemToEdit = async (id) => {
 export default async function ItemDetails({ params }) {
   const { itemId } = params;
   const { item } = await getItemToEdit(itemId)
-  const { _id , image, title, titleAr, description, category, price } = item
+  const { _id, image, title, titleAr, description, category, price } = item
   return (
     <>
       <section id='editItem'>

@@ -1,6 +1,28 @@
 import Link from "next/link";
 
-export default function Orders() {
+const getOrders = async () => {
+  const apiUrl = process.env.API_URL
+  try {
+    const res = await fetch(`${apiUrl}/api/orders`, {
+      cache: 'no-store'
+    })
+    
+    if (res.ok) {
+      return res.json()
+    }
+  } catch (error) {
+    console.log(error);
+  }
+    
+}
+
+export default async function Orders() {
+  const {orders} = await getOrders()
+  console.log(orders);
+
+  
+
+
   return (
     <>
       <div className='orderList'>
@@ -11,12 +33,14 @@ export default function Orders() {
           <h3>Name</h3>
         </div>
         <div className="orders">
-            <Link href={`/admin/Dashboard`} className='order' >
-              <h3>#003</h3>
-              <h3>23, Jan</h3>
-              <h3>2000 EGP</h3>
-              <h3>Khaled</h3>
+          {orders.length > 0 && orders.map((order, index) => (
+            <Link href={`/admin`} className='order' key={order._id}>
+              <h3>#{index + 1}</h3>
+              <h3>{order.createdAt.slice(0,10)}</h3>
+              <h3>{order.totalPrice} EGP</h3>
+              <h3>{order.person.name}</h3>
             </Link>
+          )) }
         </div>
       </div>
     </>

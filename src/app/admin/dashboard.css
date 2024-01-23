@@ -1,4 +1,8 @@
 /* Dashboard Style */
+section.isNotAdmin > h2 {
+  font-size: 2rem;
+  color: #fa007d;
+} 
 #dashboard {
   display: flex;
   flex-direction: row;

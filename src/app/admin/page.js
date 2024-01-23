@@ -1,13 +1,42 @@
 import './dashboard.css'
 import Script from "next/script";
-import Overviews from "../components/Overviews";
-import AddItems from "../components/AddItems";
-import GetUsers from "../components/GetUsers";
-import GetItems from "../components/GetItems";
-import Orders from "../components/Orders";
-import UserInfo from "../components/UserInfo";
+import Overviews from "./components/Overviews";
+import AddItems from "./components/AddItems";
+import GetUsers from "./components/GetUsers";
+import GetItems from "./components/GetItems";
+import Orders from "./components/Orders";
+import UserInfo from "./components/UserInfo";
 
-export default function Dashboard() {
+const getAdmins = async () => {
+  const apiUrl = process.env.API_URL
+  try {
+
+    const res = await fetch(`${apiUrl}/api/admins`, {
+      cache: "no-store"
+    })
+
+    if (!res.ok) {
+      throw new Error('Faild to Get the Admins')
+    }
+    return res.json()
+
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+
+export default async function Dashboard({ searchParams }) {
+  const { admin } = await getAdmins()
+  const email = searchParams.email
+  const Admins = []
+
+  for (let i = 0; i < admin.length; i++) {
+    Admins.push(admin[i].email)
+  }
+
+  if (Admins.includes(email)) {
+
     return (
       <>
         <section id="dashboard">
@@ -58,4 +87,14 @@ export default function Dashboard() {
         <Script src={'/JS/Dashboard.js'} />
       </>
     )
+  } else {
+    return (
+
+      <>
+        <section className='isNotAdmin'>
+          <h2>This Page Is Just For Admins!</h2>
+        </section>
+      </>
+    )
+  }
 }

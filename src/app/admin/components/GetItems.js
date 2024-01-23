@@ -27,8 +27,7 @@ export default async function GetItems() {
         sum += items[i].rate        
         quality = Math.round(sum / items.length)
     }
-    console.log(quality);
-
+    
     return (
         <>
             <div className='ItemList'>
@@ -40,7 +39,7 @@ export default async function GetItems() {
                 </div>
                 <div className="items">
                     {items.length && items.map(item => (
-                        <Link href={`/admin/Dashboard/editItem/${item._id}`} className='item' key={item._id}>
+                        <Link href={`/admin/editItem/${item._id}`} className='item' key={item._id}>
                                 <h3>{item.title}</h3>
                                 <h3>{item.createdAt}</h3>
                                 <h3>{item.rate} Stars</h3>
