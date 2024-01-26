@@ -16,7 +16,7 @@ export default function Home() {
         <div className={'text'}>
           <Image src={WLogo} width={260} height={130} alt="Ceres Kitchen Logo" />
           <h1><span>Delicious</span> Kitchen</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nemo voluptates at suscipit dicta doloribus iste</p>
+          <p>Join us for a gastronomic journey where flavors ignite, and every bite tells a story of passion and creativity.</p>
         </div>
 
       </section>

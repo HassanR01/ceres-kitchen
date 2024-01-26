@@ -55,7 +55,6 @@
 
 #login button {
     padding: 5px 50px;
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -67,6 +66,7 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    
 }
 
 
@@ -81,6 +81,9 @@
     }
     #login form input{
         font-size: 1.2rem;
+        width: 90%;
+    }
+    #login > button {
         width: 90%;
     }
 }

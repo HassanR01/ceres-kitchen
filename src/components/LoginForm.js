@@ -59,7 +59,9 @@ export default function LoginForm() {
             </form>
             <button onClick={() => signIn('google')}>
                 <Image src={'/Google.gif'} width={30} height={30} alt='google icon gif' />
-                Login With Google Account
+                <p>
+                    Login With Google Account
+                </p>
             </button>
         </>
     )
