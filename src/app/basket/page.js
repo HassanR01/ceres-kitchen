@@ -23,23 +23,27 @@ export default function basket({ searchParams }) {
         totalPrice += (cart[i].price * cart[i].quantity)
     }
 
-  return (
-      <>
-          <Title title={'Basket'} />
-          <section id="basket">
-              <div className="items">
-                  {cart.length > 0 && cart.map((item , index) => (
-                      <div className="item" key={index}>
-                          <Image src={item.image} width={100} height={70} alt={item.title} />
-                          <h3>{item.title}</h3>
-                          <h3>{item.quantity} KG</h3>
-                          <h4>{item.price * item.quantity} EGP</h4>
-                          <RemoveFromCart email={email} item={item} index={index} />
-                      </div>
-                  ))}
-              </div>
-              <AddOrder totalPrice={totalPrice} />
-          </section>
-      </>
-  )
+    return (
+        <>
+            <Title title={'Basket'} />
+            <section id="basket">
+                <div className="items">
+                    {cart.length > 0 && cart.map((item, index) => (
+                        <div className="item" key={index}>
+                            <div className='image'>
+                                <Image src={item.image} width={100} height={70} alt={item.title} />
+                            </div>
+                            <div className='data'>
+                                <h3>{item.title}</h3>
+                                <h3>{item.quantity} KG</h3>
+                                <h4>{item.price * item.quantity} EGP</h4>
+                                <RemoveFromCart email={email} item={item} index={index} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <AddOrder totalPrice={totalPrice} />
+            </section>
+        </>
+    )
 }

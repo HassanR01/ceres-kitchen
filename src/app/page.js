@@ -45,7 +45,7 @@ export default function Home() {
         </div>
         <div className={'text'}>
           <h2>We Provide <span>Healthy</span> Food</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse eligendi nemo voluptates at suscipit dicta doloribus iste iure! Rem magnam quo consequatur accusantium id delectus, omnis sequi nisi reprehenderit illo?</p>
+          <p>Your source for fresh, healthy meals online, Enjoy nutritious dishes made with love and delivered to you hassle-free.</p>
           <div className={'rate'}>
             <Image src={'/star.gif'} width={100} height={100} alt="star gif" />
             <div className={'ratetext'}>

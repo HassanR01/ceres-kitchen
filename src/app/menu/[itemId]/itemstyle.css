@@ -1,5 +1,6 @@
 #itemInfo {
   height: auto;
+  flex-wrap: nowrap;
   justify-content: space-around;
 }
 
@@ -119,6 +120,34 @@
 
 #itemInfo .text button:hover {
   background-color: #00ff00;
+}
+
+@media (max-width: 1180px) {
+  #itemInfo .image img {
+    width: 450px;
+  }
+}
+
+@media (max-width: 800px) {
+  #itemInfo {
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  #itemInfo .text {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  #itemInfo .image img {
+    width: 300px;
+  }
 }
 
 /* Reviews */

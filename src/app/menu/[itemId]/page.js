@@ -45,10 +45,10 @@ export default async function Item({ params }) {
         </div>
 
       </section>
-      <div className="reviews">
+      {/* <div className="reviews">
         <h2>Reviews</h2>
         <AddReview />
-      </div>
+      </div> */}
     </>
   )
 }

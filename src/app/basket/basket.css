@@ -43,17 +43,25 @@
   -o-border-radius: 10px;
 }
 
-#basket .items .item h3 {
+#basket .items .item .data {
+  padding: 0 10px;
+    width: calc(100% - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#basket .items .item .data h3 {
   font-size: 1.5rem;
   color: var(--Bg-color);
 }
 
-#basket .items .item h4 {
+#basket .items .item .data h4 {
   font-size: 1.8rem;
   color: green;
 }
 
-#basket .items .item button {
+#basket .items .item .data button {
   background-color: red;
   border: none;
   padding: 10px 30px;
@@ -134,4 +142,59 @@
 
 #basket .orderNow button:hover {
   background-color: #00ff00;
+}
+
+@media (max-width: 1280px) {
+  #basket {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #basket .items {
+    width: 100%;
+  }
+  #basket .orderNow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  #basket .items .item {
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #basket .items .item .data {
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #basket .items .item img {
+    width: 150px;
+  }
+  #basket .items .item .data h3 {
+    font-size: 1.3rem;
+    margin: 0 10px;
+  }
+  #basket .items .item .data h4 {
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  #basket .items .item .data button {
+    font-size: 1.2rem;
+    padding: 5px 20px;
+    margin: 10px;
+  }
+  #basket .orderNow {
+    min-width: auto;
+  }
 }

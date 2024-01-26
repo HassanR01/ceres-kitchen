@@ -61,3 +61,62 @@
   font-size: 1.5rem;
   color: var(--Text-color);
 }
+
+@media (max-width: 1280px) {
+  #about {
+    padding: 50px 0;
+  }
+  #about .info {
+    flex-direction: column-reverse;
+  }
+  #about .info .image img {
+    width: 500px;
+    height: 400px;
+  }
+  #about .info .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  #about .info .text h2 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  #about .info .text p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+    #about {
+    padding: 90px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #about .info .image img {
+    width: 300px;
+    height: 150px;
+  }
+  #about .info .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  #about .info .text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  #about .info .text p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}

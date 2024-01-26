@@ -24,18 +24,23 @@ export default function Header({ admins }) {
   return (
     <header>
       <nav className={'menu'}>
-        <ul>
+        <ul className="menuList">
           <li><Link href={'/'}>Home</Link></li>
-          <li><Link href={'/menu'}>menu</Link></li>
-          <li><Link href={'/contact'}>contact</Link></li>
-          <li><Link href={'/about'}>about</Link></li>
+          <li><Link href={'/menu'}>Menu</Link></li>
+          <li><Link href={'/contact'}>Contact</Link></li>
+          <li><Link href={'/about'}>About</Link></li>
         </ul>
       </nav>
+      <div className="brgIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav className={'access'}>
         <ul>
           {status === 'authenticated' ? ((
             <>
-              { Admins.includes(session?.user?.email) ? (
+              {Admins.includes(session?.user?.email) ? (
                 <li><Link href={{
                   pathname: '/admin',
                   query: {
@@ -43,12 +48,12 @@ export default function Header({ admins }) {
                   }
                 }}><Image src={'/dashboard.svg'} width={40} height={40} alt="Dashboard" /></Link></li>
               ) : (
-                  <li><Link href={{
-                    pathname: `/basket`,
-                    query: {
-                      email: `${session?.user?.email}`,
-                    }
-                  }}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon"/></Link></li>
+                <li><Link href={{
+                  pathname: `/basket`,
+                  query: {
+                    email: `${session?.user?.email}`,
+                  }
+                }}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li>
               )}
               |
               <li><Link href={{
@@ -59,9 +64,9 @@ export default function Header({ admins }) {
               }}><Image src={session?.user?.image} width={50} height={50} alt="user" className={'userImg'} /></Link></li>
             </>
           )) : ((
-              <>
-                <li><Link href={'/basket'}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li> | <li className="loginBtn"><Link href={'/log_in'}>Sign In</Link></li>
-              </>
+            <>
+              <li><Link href={'/basket'}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li> | <li className="loginBtn"><Link href={'/log_in'}>Sign In</Link></li>
+            </>
           ))}
         </ul>
       </nav>

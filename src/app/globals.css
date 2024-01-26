@@ -68,6 +68,15 @@ h2 {
   background-color: #000000;
 }
 
+@media (max-width: 800px) {
+  section {
+    padding: 0;
+  }
+  .titlepage h1 {
+    font-size: 2.5rem !important;
+  }
+}
+
 /* header */
 
 header {
@@ -76,6 +85,7 @@ header {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,6 +110,7 @@ header .logo img {
 } */
 
 header nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,6 +174,99 @@ header .access ul li a h4 {
   -o-border-radius: 50%;
 }
 
+header .brgIcon {
+  width: 60px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .brgIcon span {
+  background-color: var(--Text-color);
+  height: 3px;
+  margin: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+header .brgIcon span:nth-child(1) {
+  width: 25px;
+}
+header .brgIcon span:nth-child(2) {
+  width: 100%;
+}
+header .brgIcon span:nth-child(3) {
+  width: 25px;
+}
+
+@media (max-width: 800px) {
+  header {
+    top: 0 !important;
+    bottom: auto;
+    flex-direction: row-reverse;
+  }
+  header .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--Bg-color);
+    overflow: hidden;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  }
+
+  header .menu.active {
+    height: 215px;
+  }
+
+  header .menu .menuList {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header .menu .menuList li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .menu .menuList li a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  header .brgIcon {
+    display: flex;
+  }
+
+  header .brgIcon:hover span {
+    width: 100% !important;
+  }
+
+  #cursor {
+    display: none !important;
+  }
+
+  footer {
+    padding: 10px !important;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* Home page Styling */
 #home {
   position: relative;
@@ -224,13 +328,29 @@ header .access ul li a h4 {
   -o-border-radius: 20px;
 }
 
+@media (max-width: 800px) {
+  
+  #home .text img {
+    width: 200px;
+  }
+
+  #home .text h1 {
+    font-size: 2rem;
+  }
+  #home .text p {
+    font-size: 1.2rem;
+    margin: 20px 0 0;
+  }
+}
+
 /* Items List Style */
 #itemsMenuHP {
   flex-direction: column;
   min-height: auto;
-  height: auto !important;
   padding: 20px;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 #itemsMenuHP .items {
@@ -283,10 +403,6 @@ header .access ul li a h4 {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
-
-#itemsMenuHP > * {
-  scroll-snap-align: start;
 }
 
 #itemsMenuHP .items .item.active {
@@ -382,6 +498,69 @@ header .access ul li a h4 {
   border: 2px solid var(--Garn-color);
 }
 
+@media (max-width: 400px ) {
+    #itemsMenuHP .filters ul li {
+    width: 125px !important;
+    font-size: 0.8rem !important;
+  }
+
+   #itemsMenuHP .items .item {
+    height: 250px !important;
+    min-width: 300px !important;
+    width: 300px;
+  }
+
+  #itemsMenuHP .items .item .image {
+    height: calc(100% - 100px);
+  }
+
+  #itemsMenuHP .items .item .text h3 {
+    font-size: 1.3rem;
+  }
+
+  #itemsMenuHP .items .item .text h5 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #itemsMenuHP {
+    padding: 10px;
+  }
+  #itemsMenuHP .filters {
+    margin: 20px;
+  }
+  #itemsMenuHP .filters ul {
+    justify-content: center;
+  }
+  #itemsMenuHP .filters ul li {
+    width: 150px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #itemsMenuHP .items .item {
+    height: 300px;
+    min-width: 400px;
+    width: 300px;
+  }
+
+  #itemsMenuHP .items .item .image {
+    height: calc(100% - 100px);
+  }
+
+  #itemsMenuHP .items .item .text h3 {
+    font-size: 1.3rem;
+  }
+
+  #itemsMenuHP .items .item .text h5 {
+    font-size: 1.3rem;
+  }
+
+}
+
 /* Expect Section */
 #expect {
   justify-content: space-around;
@@ -428,6 +607,33 @@ header .access ul li a h4 {
   color: var(--Text-color);
 }
 
+@media (max-width: 800px) {
+  #expect {
+    min-height: auto;
+    margin: 50px 0;
+  }
+  #expect .image img {
+    width: 300px;
+    height: 300px;
+  }
+  #expect .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    padding: 0 10px;
+  }
+  #expect .text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  #expect .text p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
 /* Recommendation Section */
 #rec {
   justify-content: space-around;
@@ -482,8 +688,48 @@ header .access ul li a h4 {
   color: var(--Bg-color);
 }
 #rec .text .orders a h5 {
-  color: var(--Bg-color);
+  color: #0d7000;
   font-size: 2.5rem;
+}
+
+@media (max-width: 800px) {
+  #rec {
+    margin: 50px 0;
+    min-height: auto;
+  }
+  #rec .image img {
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+  }
+  #rec .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  #rec .text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  #rec .text p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  #rec .text .orders a {
+    padding: 15px;
+  }
+  #rec .text .orders a h3 {
+    font-size: 2rem;
+  }
+  #rec .text .orders a p {
+    font-size: 1.2rem;
+  }
+  #rec .text .orders a h5 {
+    font-size: 2rem;
+  }
 }
 
 /* Services */
@@ -615,12 +861,13 @@ footer .copyright a:hover {
 
 /* Title Style */
 .titlepage {
-  height: 20vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .titlepage h1 {
+  margin-top: 70px;
   color: var(--Text-color);
   font-size: 3rem;
   max-width: none;

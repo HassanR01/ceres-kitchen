@@ -1,10 +1,9 @@
 #contact {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 100px 0 10px;
 }
 
 #contact .contact {
@@ -62,18 +61,21 @@
 
 #contact .contact .form form input:focus,
 #contact .contact .form form textarea:focus {
-    border-bottom: 5px solid #00ff00;
+  border-bottom: 5px solid #00ff00;
 }
 
 #contact .contact .form .Udata {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   margin: 30px 0;
 }
 #contact .contact .form .Udata input {
-  width: 400px;
+  max-width: 400px;
+  width: calc(95% / 2);
+  min-width: 250px;
   padding: 5px 10px;
   margin: 0 20px 0 0;
   font-size: 1.5rem;
@@ -101,8 +103,8 @@
 #contact .contact .form .message input,
 #contact .contact .form .message textarea {
   width: 100%;
+  max-width: 500px;
   padding: 5px 10px;
-  margin: 0 20px 0 0;
   font-size: 1.5rem;
   font-weight: 700;
   font-family: var(--Main-font-english);
@@ -119,9 +121,9 @@
 }
 
 #contact .contact .form .message textarea {
-    height: 250px;
-    margin: 30px 0;
-    max-width: 1000px;
+  height: 250px;
+  margin: 20px 0;
+  max-width: 1000px;
 }
 
 #contact .contact .form form button {
@@ -146,5 +148,40 @@
 }
 
 #contact .contact .form form button:hover {
-      background-color: #00ff00;
+  background-color: #00ff00;
+}
+
+@media (max-width: 1280px) {
+  #contact .contact .map {
+    display: none;
+  }
+  #contact .contact .form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  #contact .contact .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  #contact .contact .form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #contact .contact .form form .Udata input {
+    width: 100%;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  #contact .contact .form form .message input,
+  #contact .contact .form form .message textarea {
+    width: 100%;
+    font-size: 1.2rem;
+  }
 }
