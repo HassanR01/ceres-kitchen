@@ -24,6 +24,24 @@ const getOrderById = async (id) => {
 
 }
 
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  const { itemId } = params
+  const {item} = await getOrderById(itemId)
+  return {
+    title: item.title,
+    description: item.description,
+    siteName: 'Ceres Kitchen',
+    images: [
+      {
+        url: item.image, // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+    ]
+  }
+}
+
 export default async function Item({ params }) {
   const { itemId } = params;
   const { item } = await getOrderById(itemId);
