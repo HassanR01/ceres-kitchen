@@ -12,14 +12,14 @@ export default function AddOrder({ totalPrice }) {
         name: session?.user?.name,
         email: session?.user?.email,
     }
+    const orders = { totalPrice, items }
     useEffect(() => {
         const cartFromLS = localStorage.getItem('CartItems')
         if (cartFromLS) {
             setCart(JSON.parse(cartFromLS))
         }
     }, [])
-
-    console.log(Cart);
+    
     
     const handelAddOrderForm = async (e) => {
         e.preventDefault()
@@ -36,8 +36,16 @@ export default function AddOrder({ totalPrice }) {
                             },
                             body: JSON.stringify({ person, address, phone, items, totalPrice })
                         })
+
+                        const resU = await fetch(`/api/users/${session?.user?.email}`, {
+                            method: 'PUT',
+                            headers: {
+                                "Content-type": "application/json"
+                            },
+                            body: JSON.stringify({ orders })
+                        })
                         
-                        if (res.ok) {
+                        if (res.ok && resU.ok) {
                             localStorage.clear()
                             location.replace('/')
                         }

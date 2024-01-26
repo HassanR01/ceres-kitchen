@@ -8,6 +8,7 @@ import ItemsList from "../components/ItemsList"
 
 export default function Home() {
   let items = ['chicken', 'cook', 'salat']
+  
   return (
     <>
       {/* Home Section */}

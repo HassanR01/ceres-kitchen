@@ -33,6 +33,7 @@ ul {
 section {
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 100px;
@@ -152,8 +153,8 @@ header .access ul li a h4 {
   justify-content: center;
   color: var(--Bg-color);
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
   background-color: var(--Garn-color);
   border-radius: 50%;
   -webkit-border-radius: 50%;

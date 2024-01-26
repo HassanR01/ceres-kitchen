@@ -51,7 +51,12 @@ export default function Header({ admins }) {
                   }}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon"/></Link></li>
               )}
               |
-              <li><Link href={`/profile/${session?.user?.email}`}><Image src={session?.user?.image} width={50} height={50} alt="user" className={'userImg'} /></Link></li>
+              <li><Link href={{
+                pathname: `/profile`,
+                query: {
+                  email: session?.user?.email
+                }
+              }}><Image src={session?.user?.image} width={50} height={50} alt="user" className={'userImg'} /></Link></li>
             </>
           )) : ((
               <>

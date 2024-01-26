@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-
+let date = `${new Date()}`
 const userSchema = new Schema({
     email: {
         type: String,
@@ -26,7 +26,22 @@ const userSchema = new Schema({
             quantity:Number
         },
     ],
-    orders: [],
+    orders: [{
+        totalPrice: Number,
+        items: [{
+            title: String,
+            quantity: Number,
+            price: Number,
+        },],
+        status: {
+            type: String,
+            default: 'Paid'
+        },
+        date: {
+            type: String,
+            default: date.slice(4, 15).replaceAll(' ', "-")
+        }
+    }],
     
 
 }, { timestamps: true })

@@ -10,7 +10,7 @@
   color: red;
 }
 
-#profileInfo .info img {
+#profileInfo .userInfo img {
   position: absolute;
   top: -60px;
   left: 50%;
@@ -26,7 +26,7 @@
   -o-border-radius: 50%;
 }
 
-#profileInfo .info {
+#profileInfo .userInfo {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -35,23 +35,23 @@
   text-align: center;
 }
 
-#profileInfo .info h3 {
+#profileInfo .userInfo h2 {
   font-size: 2rem;
   color: var(--Text-color);
 }
 
-#profileInfo .info h5 {
+#profileInfo .userInfo p {
   font-size: 1.3rem;
   color: var(--Text-color);
 }
 
-#profileInfo .info .orderslist h2 {
+#profileInfo .orderslist h2 {
   font-size: 2rem;
   color: var(--Text-color);
   margin-bottom: 30px;
 }
 
-#profileInfo .info .orderslist {
+#profileInfo .orderslist {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@
   -o-border-radius: 10px;
 }
 
-#profileInfo .info .orderslist .evid {
+#profileInfo .orderslist .evid {
   width: 100%;
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -78,12 +78,12 @@
   justify-content: space-around;
 }
 
-#profileInfo .info .orderslist .evid h3 {
+#profileInfo .orderslist .evid h3 {
   font-size: 1.5rem;
   color: var(--Text-color);
 }
 
-#profileInfo .info .orderslist .orders {
+#profileInfo .orderslist .orders {
   width: 100%;
   min-height: 50vh;
   padding: 10px;
@@ -95,7 +95,7 @@
   -o-border-radius: 10px;
 }
 
-#profileInfo .info .orderslist .orders .order {
+#profileInfo .orderslist .orders .order {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -117,13 +117,20 @@
   -o-transition: all 0.5s;
 }
 
-#profileInfo .info .orderslist .orders .order:hover {
+#profileInfo .orderslist .orders .order:hover {
     background-color: #000000a2;
 }
 
-#profileInfo .info .orderslist .orders .order h3 {
+#profileInfo .orderslist .orders .order h3 {
   font-size: 1.3rem;
+  color: var(--Text-color);
 }
+#profileInfo .orderslist .orders > h3 {
+  font-size: 2rem;
+  color: var(--Text-color);
+  text-align: center;
+}
+
 
 #profileInfo a {
   font-size: 1.8rem;

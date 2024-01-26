@@ -8,25 +8,6 @@ import './basket.css'
 import RemoveFromCart from '@/src/components/removeFromCart'
 import AddOrder from '@/src/components/AddOrder'
 
-
-// const getUserbyEmail = async (email) => {
-//     const apiUrl = process.env.API_URL
-
-//     try {
-//         const res = await fetch(`${apiUrl}/api/users/${email}`, {
-//             cache: "no-store",
-//         })
-
-//         if (!res.ok) {
-//             throw new Error('Cannot fetch the item api')
-//         }
-
-//         return res.json()
-//     } catch (error) {
-//         console.log('err', error);
-//     }
-// }
-
 export default function basket({ searchParams }) {
     const [cart, setCart] = useState([])
     const { status, data: session } = useSession()

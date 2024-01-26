@@ -1,20 +1,20 @@
-import React from 'react'
 
-export default function OrdersList({ email }) {
-    let Arr = [1,3,2]
+
+export default function OrdersList({ orders }) {
+
     return (
         <>
-            {Arr.length > 0 && Arr.map((ar, index) => (
+            {orders.length > 0 && orders.map((order, index) => (
 
-                <div className='order'>
+                <div className='order' key={order._id}>
                     <h3>#{index + 1}</h3>
-                    <h3>2 Items</h3>
-                    <h3>22-1-2024</h3>
-                    <h3 style={{ color: "#00ff00"}}>5000 EGP</h3>
-                    <h3>Delivered</h3>
+                    {order.items.length === 1 ? (<h3>{order.items.length} item</h3>) : (<h3>{order.items.length} items</h3>)}
+                    <h3>{order.date}</h3>
+                    <h3 style={{ color: "#00ff00"}}>{order.totalPrice} EGP</h3>
+                    <h3>{order.status}</h3>
                 </div>
             ))}
-            {Arr.length === 0 && (<h3>No Orders Added</h3>)}
+            {orders.length === 0 && (<h3>No Orders Added</h3>)}
         </>
     )
 }
