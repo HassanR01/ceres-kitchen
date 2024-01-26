@@ -498,7 +498,7 @@ header .brgIcon span:nth-child(3) {
   border: 2px solid var(--Garn-color);
 }
 
-@media (max-width: 400px ) {
+@media (max-width: 430px ) {
     #itemsMenuHP .filters ul li {
     width: 125px !important;
     font-size: 0.8rem !important;
