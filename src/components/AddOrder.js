@@ -67,7 +67,7 @@ export default function AddOrder({ totalPrice }) {
                     <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} name='address' placeholder='Your Address' />
                     <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} name='telephone' placeholder='Phone Number'/>
                     <h2>{totalPrice} EGP</h2>
-                    <button>Order Now!</button>
+                    {status === 'authenticated' ? (<button>Order Now!</button>) : (<button>Sign In To Order</button>)}
                 </form>
             </div>
         </>
