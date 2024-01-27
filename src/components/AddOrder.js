@@ -24,8 +24,8 @@ export default function AddOrder({ totalPrice }) {
     const handelAddOrderForm = async (e) => {
         e.preventDefault()
         
-        if (totalPrice !== 0 && phone && address) {
-            if (status === 'authenticated') {
+        if (status === 'authenticated') {
+                if (totalPrice !== 0 && phone && address) {
                 const confermed = confirm('Are You Ready to send the order?')
                 if (confermed) {   
                     try {
@@ -54,9 +54,9 @@ export default function AddOrder({ totalPrice }) {
                         console.log(error);
                     }
                 }
-            } else {
-                signIn('google')
             }
+        } else {
+            signIn('google')
         }
     }
 
