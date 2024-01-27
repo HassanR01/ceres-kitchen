@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
   const { itemId } = params
   const {item} = await getOrderById(itemId)
   return {
-    title: item.title,
+    title: `${item.title} | Menu | Ceres Kitchen`,
     description: item.description,
     siteName: 'Ceres Kitchen',
     images: [
