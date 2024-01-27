@@ -36,6 +36,7 @@
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
+    box-shadow: 0 0 20px 1px #000000;
 }
 
 #itemsMenu .items .item.active {
@@ -44,6 +45,7 @@
 
 #itemsMenu .items .item:hover {
   background-color: rgb(221, 226, 230);
+    box-shadow: 0 0 20px 10px #000000;
 }
 
 #itemsMenu .items .item .image {
