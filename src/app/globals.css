@@ -157,15 +157,11 @@ header .access ul li a .userImg {
 }
 
 header .access ul li a .qNum {
-  height: 25px;
   width: 25px;
-  padding: 10px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  height: 25px;
   color: var(--Bg-color);
   position: absolute;
+  display: table;
   top: 5px;
   right: 5px;
   background-color: var(--Garn-color);
@@ -174,6 +170,13 @@ header .access ul li a .qNum {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+header .access ul li a .qNum h4 {
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+  font-size: 1.2rem;
 }
 
 header .brgIcon {
