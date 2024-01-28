@@ -159,9 +159,9 @@ header .access ul li a .userImg {
 header .access ul li a .qNum {
   height: 25px;
   width: 25px;
-  padding: auto;
-  text-align: center;
+  padding: 10px;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   color: var(--Bg-color);
