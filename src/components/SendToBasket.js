@@ -6,19 +6,32 @@ export default function SendToBasket({ title, price, image }) {
     const [Cart, setCart] = useState([])
     const { status, data: session } = useSession()
     const [quantity, setQuantity] = useState("")
+    const [alerting, setalerting] = useState('')
     const basket = { quantity, title, price, image }
     price = price * quantity
+
     useEffect(() => {
         const cartFromLS = localStorage.getItem('CartItems')
         if (cartFromLS) {
             setCart(JSON.parse(cartFromLS))
         }
     }, [])
+
+    const increase = () => {
+        setQuantity(+quantity + 1)
+        setalerting('')
+    }
+
+    const decrease = () => {
+        setQuantity(quantity - 1)
+    }
+
+
     const sendOrderToBasket = async (e) => {
         e.preventDefault()
 
-        if (!quantity || !title || !price || !image) {
-            alert('Quantity is required!')
+        if (quantity <= 0 || !title || !price || !image) {
+            setalerting("Quantity is required!")
         } else {
 
             if (status === 'authenticated') {
@@ -56,14 +69,11 @@ export default function SendToBasket({ title, price, image }) {
         <>
             <form onSubmit={sendOrderToBasket}>
                 <div className="quantity">
-                    <h4>Quantity:</h4>
-                    <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="0" min={1} max={1000} />
-                    <span>KG</span>
+                    <span className='DIBtn' onClick={() => decrease()}>-</span><input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="0" min={1} max={1000} /><span>KG</span><span className='DIBtn' onClick={() => increase()}>+</span>
                 </div>
+                <h3>{ alerting }</h3>
                 <h5>{price} EGP</h5>
-                <button>
-                    Add To Basket
-                </button>
+                <button>Add To Basket</button>
             </form>
         </>
     )

@@ -16,6 +16,9 @@
 body {
   font-family: var(--Main-font-english);
   background-color: var(--Bg-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   height: 100%;
   width: 100%;
 }
@@ -159,9 +162,12 @@ header .access ul li a .userImg {
 header .access ul li a .qNum {
   width: 25px;
   height: 25px;
+  padding: 3px;
   color: var(--Bg-color);
   position: absolute;
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 5px;
   right: 5px;
   background-color: var(--Garn-color);
@@ -176,7 +182,8 @@ header .access ul li a .qNum h4 {
   display: table-cell; 
   vertical-align: middle; 
   text-align: center; 
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin: 5px;
 }
 
 header .brgIcon {

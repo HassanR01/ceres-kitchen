@@ -3,6 +3,7 @@ import Image from "next/image"
 import WLogo from '../../public/ckwhite.svg'
 import Sellingorder from "../components/Sellingorder"
 import ItemsList from "../components/ItemsList"
+import Script from "next/script"
 
 
 
@@ -71,7 +72,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <Script src="JS/home.js" strategy="afterInteractive" />
     </>
   )
 }

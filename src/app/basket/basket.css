@@ -17,6 +17,29 @@
   justify-content: flex-start;
 }
 
+#basket .items h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--Text-color);
+}
+
+#basket .items a {
+  margin: 20px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--Main-font);
+  color: var(--Bg-color);
+  padding: 5px 30px;
+  background-color: var(--Garn-color);
+  border: 2px solid var(--Text-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
 #basket .items .item {
   width: 100%;
   display: flex;
@@ -45,7 +68,7 @@
 
 #basket .items .item .data {
   padding: 0 10px;
-    width: calc(100% - 150px);
+  width: calc(100% - 150px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,6 +136,12 @@
   -o-border-radius: 10px;
 }
 
+#basket .orderNow h3 {
+  font-size: 1.3rem;
+  color: #ff3300;
+  text-align: center;
+}
+
 #basket .orderNow h2 {
   font-size: 1.8rem;
   color: #00ff00;
@@ -170,7 +199,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   #basket .items .item .data {
     flex-wrap: wrap;
     text-align: center;

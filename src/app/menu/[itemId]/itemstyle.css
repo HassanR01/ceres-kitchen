@@ -19,6 +19,7 @@
 }
 
 #itemInfo .text {
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,29 +49,32 @@
   max-width: 500px;
   font-size: 1.3rem;
   color: var(--Text-color);
+  margin: 10px 0;
 }
 
 #itemInfo .text h3 {
   color: var(--Text-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #itemInfo .text h4 {
   color: var(--Text-color);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 10px 0;
 }
 
 #itemInfo .text h4 span {
   color: var(--Garn-color);
+  font-size: 2.5rem;
 }
 
 #itemInfo .text h5 {
   color: var(--Text-color);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px;
 }
 
 #itemInfo .text .quantity {
@@ -79,28 +83,60 @@
   justify-content: flex-start;
 }
 
-#itemInfo .text .quantity h4 {
+#itemInfo .text .quantity h3 {
   color: var(--Text-color);
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
 #itemInfo .text .quantity input {
-  width: 75px;
-  font-size: 1.5rem;
+  width: 70px;
+  font-size: 2rem;
+  font-weight: 700;
   padding: 5px;
   outline: none;
   border: none;
-  margin: 0 10px;
   background-color: transparent;
   color: var(--Garn-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#itemInfo .text .quantity input[type="number"]::-webkit-inner-spin-button,
+#itemInfo .text .quantity input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0;
 }
 
 #itemInfo .text .quantity span {
   color: var(--Text-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--Garn-color);
 }
+#itemInfo .text .quantity .DIBtn {
+  padding: 8px;
+  width: 60px;
+  margin: 10px 10px;
+  font-size: 2rem;
+  background-color: var(--Bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+#itemInfo .text form h3 {
+  font-size: 1.3rem;
+  color: #ff3300;
+  text-align: center;
+}
+
 #itemInfo .text button {
   background-color: var(--Garn-color);
   font-size: 1.5rem;

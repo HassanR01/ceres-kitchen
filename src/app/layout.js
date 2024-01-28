@@ -44,9 +44,6 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true} style={{
         backgroundImage: `url(${Bgimage.src})`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        backgroundPosition: 'center'
       }}>
         <NextAuthProvider>
           <Header admins={admin} />

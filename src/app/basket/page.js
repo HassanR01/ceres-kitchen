@@ -7,6 +7,7 @@ import Image from 'next/image'
 import './basket.css'
 import RemoveFromCart from '@/src/components/removeFromCart'
 import AddOrder from '@/src/components/AddOrder'
+import Link from 'next/link'
 
 export default function basket({ searchParams }) {
     const [cart, setCart] = useState([])
@@ -41,6 +42,7 @@ export default function basket({ searchParams }) {
                             </div>
                         </div>
                     ))}
+                    {cart.length === 0 && (<><h2>No Orders Added</h2><Link href={'/menu'}>Check our Menu Now</Link></>)}
                 </div>
                 <AddOrder totalPrice={totalPrice} />
             </section>

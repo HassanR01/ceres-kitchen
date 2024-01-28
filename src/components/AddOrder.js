@@ -7,6 +7,7 @@ export default function AddOrder({ totalPrice }) {
     const [Cart, setCart] = useState([])
     const [address, setAddress] = useState("")
     const [phone, setPhone] = useState("")
+    const [alerting, setAlerting] = useState("")
     const items = Cart
     const person = {
         name: session?.user?.name,
@@ -54,8 +55,12 @@ export default function AddOrder({ totalPrice }) {
                         console.log(error);
                     }
                 }
+                } else {
+                    setAlerting('Adding items and Entering All Data Are Required!')
             }
+
         } else {
+            setAlerting('You Have to Sign In To order')
             signIn('google')
         }
     }
@@ -66,6 +71,7 @@ export default function AddOrder({ totalPrice }) {
                 <form onSubmit={handelAddOrderForm}>
                     <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} name='address' placeholder='Your Address' />
                     <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} name='telephone' placeholder='Phone Number'/>
+                    <h3>{alerting}</h3>
                     <h2>{totalPrice} EGP</h2>
                     {status === 'authenticated' ? (<button>Order Now!</button>) : (<button>Sign In To Order</button>)}
                 </form>
