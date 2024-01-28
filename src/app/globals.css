@@ -156,9 +156,10 @@ header .access ul li a .userImg {
   -o-border-radius: 50%;
 }
 
-header .access ul li a h4 {
+header .access ul li a .qNum {
   height: 25px;
   width: 25px;
+  padding: auto;
   text-align: center;
   display: flex;
   align-items: center;
@@ -265,6 +266,7 @@ header .brgIcon span:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 }
 
@@ -418,7 +420,7 @@ header .brgIcon span:nth-child(3) {
 
 #itemsMenuHP .items .item:hover {
   background-color: rgb(221, 226, 230);
-  box-shadow: 0 0 20px 10px #000000;
+  box-shadow: 0 0 20px 5px #000000;
 }
 
 #itemsMenuHP .items .item .image {
@@ -536,6 +538,7 @@ header .brgIcon span:nth-child(3) {
 
   #itemsMenuHP .items .item .text h5 {
     font-size: 1.3rem;
+    top: 5px;
   }
 }
 

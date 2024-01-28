@@ -1,4 +1,4 @@
-const selectfilter = document.querySelectorAll('.filters ul li')
+const selectfilter = document.querySelectorAll('#itemsMenu .filters ul li')
 selectfilter.forEach(selectCtg => {
     selectCtg.addEventListener('mouseover', () => {
         const Items = document.querySelectorAll('.items .item')

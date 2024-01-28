@@ -6,7 +6,7 @@ text.innerHTML =+ year
 
 const selectCtgs = document.querySelectorAll('#itemsMenuHP .filters ul li')
 selectCtgs.forEach(selectCtg => {
-    selectCtg.addEventListener('mouseover', () => {
+    selectCtg.addEventListener('click', () => {
         const allItems = document.querySelectorAll('.items .item')
         selectCtgs.forEach(sc => {
             sc.classList.remove('selected')

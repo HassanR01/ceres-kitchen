@@ -53,7 +53,7 @@ export default function Header({ admins }) {
                   query: {
                     email: `${session?.user?.email}`,
                   }
-                }}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li>
+                  }}><div className="qNum"><h4>{cart.length}</h4></div><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li>
               )}
               |
               <li><Link href={{
@@ -65,7 +65,7 @@ export default function Header({ admins }) {
             </>
           )) : ((
             <>
-              <li><Link href={'/basket'}><h4>{cart.length}</h4><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li> | <li className="loginBtn"><Link href={'/log_in'}>Sign In</Link></li>
+                <li><Link href={'/basket'}><div className="qNum"><h4>{cart.length}</h4></div><Image src={'/basket.svg'} width={40} height={40} alt="Basket Icon" /></Link></li> | <li className="loginBtn"><Link href={'/log_in'}>Sign In</Link></li>
             </>
           ))}
         </ul>

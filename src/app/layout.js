@@ -53,7 +53,7 @@ export default async function RootLayout({ children }) {
           {children}
           <Cursor />
           <Footer />
-          <Script src='JS/main.js' />
+          <Script src='JS/main.js' strategy='afterInteractive' />
         </NextAuthProvider>
       </body>
     </html>
