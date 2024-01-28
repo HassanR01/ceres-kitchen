@@ -29,9 +29,8 @@
   font-weight: 700;
   font-family: var(--Main-font);
   color: var(--Bg-color);
-  padding: 5px 30px;
+  padding: 5px 40px;
   background-color: var(--Garn-color);
-  border: 2px solid var(--Text-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -150,7 +149,6 @@
 
 #basket .orderNow button {
   background-color: var(--Garn-color);
-  width: 250px;
   border: none;
   padding: 10px 30px;
   font-size: 1.5rem;
@@ -169,8 +167,32 @@
   -o-transition: all 0.5s;
 }
 
+
 #basket .orderNow button:hover {
   background-color: #00ff00;
+}
+
+#basket .orderNow a {
+  background-color: var(--Garn-color);
+  color: var(--Bg-color);
+  text-align: center;
+  margin: 10px;
+  width: 150px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 @media (max-width: 1280px) {

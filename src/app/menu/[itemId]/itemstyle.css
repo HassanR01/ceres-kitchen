@@ -79,6 +79,7 @@
 
 #itemInfo .text .quantity {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
@@ -118,7 +119,7 @@
   width: 60px;
   margin: 10px 10px;
   font-size: 2rem;
-  background-color: var(--Bg-color);
+  background-color: var(--Garn-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,6 +129,7 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  color: var(--Bg-color);
   cursor: pointer;
 }
 

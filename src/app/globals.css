@@ -2,8 +2,8 @@
 
 :root {
   --Main-font-english: "Tajawal", sans-serif;
-  --Bg-color: #030303;
-  --Garn-color: #d9ff00;
+  --Bg-color: #000000;
+  --Garn-color: #ffc74d;
   --Garn2-color: #ffa54f;
   --Text-color: #f6f1f1;
 }
@@ -72,6 +72,9 @@ h2 {
 }
 
 @media (max-width: 800px) {
+  body {
+    background-image: none !important;
+  }
   section {
     padding: 0;
   }
@@ -396,7 +399,7 @@ header .brgIcon span:nth-child(3) {
 
 #itemsMenuHP .items::-webkit-scrollbar-thumb {
   width: 5px;
-  background-color: #d9ff00;
+  background-color: var(--Garn-color);
   cursor: pointer;
 }
 

@@ -42,7 +42,7 @@ export default function basket({ searchParams }) {
                             </div>
                         </div>
                     ))}
-                    {cart.length === 0 && (<><h2>No Orders Added</h2><Link href={'/menu'}>Check our Menu Now</Link></>)}
+                    {cart.length === 0 && (<><h2>No Orders Added</h2><Link href={'/menu'}>Check our Menu</Link></>)}
                 </div>
                 <AddOrder totalPrice={totalPrice} />
             </section>

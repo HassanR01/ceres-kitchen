@@ -1,5 +1,6 @@
 'use client'
 import { signIn, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 export default function AddOrder({ totalPrice }) {
@@ -75,6 +76,7 @@ export default function AddOrder({ totalPrice }) {
                     <h2>{totalPrice} EGP</h2>
                     {status === 'authenticated' ? (<button>Order Now!</button>) : (<button>Sign In To Order</button>)}
                 </form>
+                {Cart.length > 0 ? (<Link href={'/menu'}>Add More Items</Link>) : null}
             </div>
         </>
     )
