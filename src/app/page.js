@@ -25,13 +25,13 @@ export default function Home() {
       <section id="itemsMenuHP">
         <div className="filters">
           <ul>
-            <li data-category='Ready_To_Heat'>Ready To Heat</li>
-            <li data-category='Pre_Cooked'>Pre Cooked</li>
-            <li data-category='Air_Fire'>Air Fire</li>
-            <li data-category='Bakery'>Bakery</li>
-            <li data-category='Appetizers'>Appetizers</li>
-            <li data-category='Salads'>Salads</li>
-            <li data-category='Service'>Service</li>
+            <li data-category='Ready_To_Heat'><h5>Ready To Heat</h5></li>
+            <li data-category='Pre_Cooked'><h5>Pre Cooked</h5></li>
+            <li data-category='Air_Fire'><h5>Air Fire</h5></li>
+            <li data-category='Bakery'><h5>Bakery</h5></li>
+            <li data-category='Appetizers'><h5>Appetizers</h5></li>
+            <li data-category='Salads'><h5>Salads</h5></li>
+            <li data-category='Service'><h5>Service</h5></li>
           </ul>
         </div>
         <div className={'items'}>

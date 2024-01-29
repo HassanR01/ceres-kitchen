@@ -144,7 +144,6 @@
 #basket .orderNow h2 {
   font-size: 1.8rem;
   color: #00ff00;
-  margin-bottom: 10px;
 }
 
 #basket .orderNow button {
@@ -170,6 +169,52 @@
 
 #basket .orderNow button:hover {
   background-color: #00ff00;
+}
+
+#basket .orderNow .paymethod {
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#basket .orderNow .paymethod input[type='radio'] {
+  display: none;
+}
+
+#basket .orderNow .paymethod label {
+  position: relative;
+  font-size: 1.5rem;
+  margin: 20px 30px ;
+  font-family: var(--Main-font-english);
+  font-weight: 700;
+  color: var(--Text-color);
+}
+
+#basket .orderNow .paymethod label::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -35px;
+  transform: translate(0, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 5px solid var(--Text-color);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+
+#basket .orderNow .paymethod input[type='radio']:checked + label::before {
+  background-color: var(--Garn-color);
+  border: 5px solid var(--Text-color);
 }
 
 #basket .orderNow a {
