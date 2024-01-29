@@ -3,7 +3,6 @@ import Image from "next/image";
 
 export default function OrdersList({ orders }) {
 
-    console.log(orders[0].items);
     return (
         <>
             {orders.length > 0 && orders.map((order, index) => (

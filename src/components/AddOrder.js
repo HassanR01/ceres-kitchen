@@ -62,7 +62,7 @@ export default function AddOrder({ totalPrice }) {
 
         } else {
             setAlerting('You Have to Sign In To order')
-            signIn('google')
+            location.replace('/log_in')
         }
     }
 
