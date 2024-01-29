@@ -21,6 +21,9 @@
     font-size: 1.5rem;
     margin: 10px 0;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     outline: none;
     border: none;
     border-bottom: 2px solid var(--Garn-color);
@@ -54,6 +57,7 @@
 }
 
 #login button {
+    background-color: aliceblue;
     padding: 5px 50px;
     display: flex;
     align-items: center;
