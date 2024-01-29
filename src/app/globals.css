@@ -163,11 +163,13 @@ header .access ul li a .userImg {
 }
 
 header .access ul li a .qNum {
-  position: relative;
   width: 25px;
   height: 25px;
   color: var(--Bg-color);
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 5px;
   right: 5px;
   background-color: #ff0000;
@@ -179,16 +181,11 @@ header .access ul li a .qNum {
 }
 
 header .access ul li a .qNum h4 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50% , -50%);
-  text-align: center;
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
   font-size: 1.1rem;
-  -webkit-transform: translate(-50% , -50%);
-  -moz-transform: translate(-50% , -50%);
-  -ms-transform: translate(-50% , -50%);
-  -o-transform: translate(-50% , -50%);
+  margin: 5px;
 }
 
 header .brgIcon {
@@ -505,8 +502,9 @@ header .brgIcon span:nth-child(3) {
 }
 
 #itemsMenuHP .filters ul li {
-  position: relative;
-  height: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 5px 20px;
   min-width: 200px;
   border: 2px solid var(--Text-color);
   cursor: pointer;
@@ -516,23 +514,6 @@ header .brgIcon span:nth-child(3) {
   align-items: center;
   justify-content: center;
 }
-#itemsMenuHP .filters ul li h5 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50% , -50%);
-  font-size: 1.3rem;
-  font-weight: 700;
-  -webkit-transform: translate(-50% , -50%);
-  -moz-transform: translate(-50% , -50%);
-  -ms-transform: translate(-50% , -50%);
-  -o-transform: translate(-50% , -50%);
-}
-
 
 #itemsMenuHP .filters ul li:hover {
   background-color: var(--Garn-color);
