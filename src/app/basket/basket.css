@@ -6,6 +6,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 20px;
+  position: relative;
 }
 
 #basket .items {
@@ -190,6 +191,7 @@
   font-family: var(--Main-font-english);
   font-weight: 700;
   color: var(--Text-color);
+  cursor: pointer;
 }
 
 #basket .orderNow .paymethod label::before {
@@ -239,6 +241,33 @@
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
+
+#basket .orderNow form .payonline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 90px 10px;
+  background-color: #ffffff3d;
+  backdrop-filter: blur(5px);
+}
+#basket .orderNow form .payonline .exit {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+#basket .orderNow form .payonline .exit image {
+  mix-blend-mode: difference;
+}
+#basket .orderNow form .payonline h3 {
+  font-size: 2.5rem;
+  color: var(--Bg-color);
+}
+
+
 
 @media (max-width: 1280px) {
   #basket {
@@ -295,5 +324,8 @@
   }
   #basket .orderNow .paymethod label {
     font-size: 1.2rem;
+  }
+  #basket .orderNow form .payonline .exit {
+    top: 90px;
   }
 }

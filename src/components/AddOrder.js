@@ -1,5 +1,6 @@
 'use client'
 import { useSession } from 'next-auth/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
@@ -28,33 +29,38 @@ export default function AddOrder({ totalPrice }) {
 
         if (status === 'authenticated') {
             if (totalPrice !== 0 && phone && address) {
-                const confermed = confirm('Are You Ready to send the order?')
-                if (confermed) {
-                    try {
-                        const res = await fetch('/api/orders', {
-                            method: 'POST',
-                            headers: {
-                                "Content-type": "application/json"
-                            },
-                            body: JSON.stringify({ person, address, phone, items, totalPrice })
-                        })
+                if (payMethod) {
 
-                        const resU = await fetch(`/api/users/${session?.user?.email}`, {
-                            method: 'PUT',
-                            headers: {
-                                "Content-type": "application/json"
-                            },
-                            body: JSON.stringify({ orders })
-                        })
+                    const confermed = confirm('Are You Ready to send the order?')
+                    if (confermed) {
+                        try {
+                            const res = await fetch('/api/orders', {
+                                method: 'POST',
+                                headers: {
+                                    "Content-type": "application/json"
+                                },
+                                body: JSON.stringify({ person, address, phone, items, totalPrice })
+                            })
 
-                        if (res.ok && resU.ok) {
-                            localStorage.clear()
-                            location.replace('/')
+                            const resU = await fetch(`/api/users/${session?.user?.email}`, {
+                                method: 'PUT',
+                                headers: {
+                                    "Content-type": "application/json"
+                                },
+                                body: JSON.stringify({ orders })
+                            })
+
+                            if (res.ok && resU.ok) {
+                                localStorage.clear()
+                                location.replace('/')
+                            }
+
+                        } catch (error) {
+                            console.log(error);
                         }
-
-                    } catch (error) {
-                        console.log(error);
                     }
+                } else {
+                    setAlerting('Choose The Payment Method')
                 }
             } else {
                 setAlerting('Adding items and Entering All Data Are Required!')
@@ -81,7 +87,19 @@ export default function AddOrder({ totalPrice }) {
                         <label htmlFor='payOnline'>Pay Online</label>
                     </div>
                     {status === 'authenticated' ? (<button>Order Now!</button>) : (<button>Sign In To Order</button>)}
-                    {payMethod === 'pay_online' ? (<></>) : null} 
+                    {payMethod === 'pay_online' ? (<>
+                        <div className='payonline'>
+                            <div onClick={() => setPayMethod('')} className='exit'>
+                                <Image src={'/x.svg'} width={30} height={30} alt='Exit Icon' />
+                            </div>
+                            <div className='payOnlineForm'>
+                                <h3>Pay Online</h3>
+                                <form>
+
+                                </form>
+                            </div>
+                        </div>
+                    </>) : null}
                 </form>
                 {Cart.length > 0 ? (<Link href={'/menu'}>Add More Items</Link>) : null}
             </div>
