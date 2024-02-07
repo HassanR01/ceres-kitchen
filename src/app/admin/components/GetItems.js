@@ -24,10 +24,10 @@ export default async function GetItems() {
     let quality = 0
 
     for (let i = 0; i < items.length; i++) {
-        sum += items[i].rate        
+        sum += items[i].rate
         quality = Math.round(sum / items.length)
     }
-    
+
     return (
         <>
             <div className='ItemList'>
@@ -35,15 +35,17 @@ export default async function GetItems() {
                     <h3>Name</h3>
                     <h3>Create</h3>
                     <h3>Rate</h3>
+                    <h3>Status</h3>
                     <h3>Price</h3>
                 </div>
                 <div className="items">
                     {items.length && items.map(item => (
                         <Link href={`/admin/editItem/${item._id}`} className='item' key={item._id}>
-                                <h3>{item.title}</h3>
-                                <h3>{item.createdAt}</h3>
-                                <h3>{item.rate} Stars</h3>
-                            <h3 style={{ color: '#00ff00'}}>{item.price} EGP</h3>
+                            <h3>{item.title}</h3>
+                            <h3>{item.createdAt}</h3>
+                            <h3>{item.rate} Stars</h3>
+                            <h3>{item.status}</h3>
+                            <h3 style={{ color: '#00ff00' }}>{item.price} EGP</h3>
                         </Link>
                     ))}
                     {items.length === 0 && (<h2>No Items Exist</h2>)}

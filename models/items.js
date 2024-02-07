@@ -12,6 +12,10 @@ const itemSchema = new Schema(
             require: true,
         },
         price: Number,
+        status: {
+            type: String,
+            default: "show"
+        },
         reviews: [{
             Rate: Number,
             Name: String,

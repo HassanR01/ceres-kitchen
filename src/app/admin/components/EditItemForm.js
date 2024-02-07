@@ -1,33 +1,36 @@
 'use client'
+import { useSession } from 'next-auth/react';
 import React, { useState } from 'react'
 
-export default function EditItemForm({ id, image, title, titleAr, description, category, price }) {
+export default function EditItemForm({ id, image, title, titleAr, description, category, price, status }) {
     const [newimage, setNewImage] = useState(image);
     const [newtitle, setNewTitle] = useState(title);
     const [newtitleAr, setNewTitleAr] = useState(titleAr);
     const [newdescription, setNewDescription] = useState(description);
     const [newcategory, setNewCategory] = useState(category);
-    const [newprice, setNewPrice] = useState(price)
-
+    const [newprice, setNewPrice] = useState(price);
+    const [newstatus, setNewStatus] = useState(status);
+    const { data: session } = useSession()
+    let email = session?.user?.email
     const handelEditItemForm = async (e) => {
         e.preventDefault()
         try {
-            
+
             const res = await fetch(`/api/items/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"
                 },
-                body: JSON.stringify({newimage, newtitle, newtitleAr, newdescription, newcategory, newprice})
+                body: JSON.stringify({ newimage, newtitle, newtitleAr, newdescription, newcategory, newprice, newstatus })
             })
 
             if (res.ok) {
-                location.replace('/admin/Dashboard')
+                location.replace(`/admin?email=${email}`)
             } else {
                 throw new Error('Cannot Edit the Item')
             }
         } catch (error) {
-            
+
         }
     }
 
@@ -38,13 +41,13 @@ export default function EditItemForm({ id, image, title, titleAr, description, c
                 method: 'DELETE',
             })
 
-            location.replace('/admin/Dashboard')
+            location.replace(`/admin?email=${email}`)
         }
     }
 
     return (
         <>
-            <h2>Edit { newtitle } Item</h2>
+            <h2>Edit {newtitle} Item</h2>
             <form onSubmit={handelEditItemForm}>
                 <div className='inputs'>
                     <input value={newtitle} type="text" name="Title" placeholder="Enter The Name of The Item" onChange={(e) => setNewTitle(e.target.value)} />
@@ -59,6 +62,11 @@ export default function EditItemForm({ id, image, title, titleAr, description, c
                         <option value="Appetizers" >Appetizers</option>
                         <option value="Salads" >Salads</option>
                         <option value="Service" >Service</option>
+                    </datalist>
+                    <input value={newstatus} list="status" placeholder="Status" onChange={(e) => setNewStatus(e.target.value)} />
+                    <datalist id="status">
+                        <option value="show" >Show</option>
+                        <option value="hide" >Hide</option>
                     </datalist>
                     <input value={newprice} type="number" min={0} placeholder="Enter Price" onChange={(e) => setNewPrice(e.target.value)} />
                     <textarea value={newdescription} type="text" name="Description" placeholder="Enter Small Description about The Item" onChange={(e) => setNewDescription(e.target.value)} />

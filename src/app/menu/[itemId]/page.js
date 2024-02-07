@@ -27,7 +27,7 @@ const getOrderById = async (id) => {
 // or Dynamic metadata
 export async function generateMetadata({ params }) {
   const { itemId } = params
-  const {item} = await getOrderById(itemId)
+  const { item } = await getOrderById(itemId)
   return {
     title: `${item.title} | Menu | Ceres Kitchen`,
     description: item.description,
@@ -54,6 +54,7 @@ export default async function Item({ params }) {
         </div>
         <div className="text">
           <h3>{item.title}</h3>
+          <h3>{item.titleAr}</h3>
           <p>{item.description}</p>
           <h4>Price: <span>{item.price} EGP</span></h4>
           <h5>

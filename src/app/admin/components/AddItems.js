@@ -11,7 +11,6 @@ export default function AddItems() {
     const [category, setCategory] = useState("");
     const [price, setPrice] = useState("");
 
-
     const handelSubmit = async (e) => {
         e.preventDefault()
 

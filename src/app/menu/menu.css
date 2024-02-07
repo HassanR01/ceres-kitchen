@@ -43,6 +43,10 @@
   display: flex;
 }
 
+#itemsMenu .items .item.hide {
+  display: none !important;
+}
+
 #itemsMenu .items .item:hover {
   background-color: rgb(221, 226, 230);
     box-shadow: 0 0 20px 5px #000000;

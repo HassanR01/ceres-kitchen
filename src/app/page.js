@@ -66,9 +66,9 @@ export default function Home() {
           <h2>Best Selling <span>Orders</span></h2>
           <p>Food For The Body Is Not Enough, There Must Be Food For The Soul</p>
           <div className={'orders'}>
-            <Sellingorder name='order 1' price='$50' items={`${items.join('; ')}`} />
-            <Sellingorder name='order 1' price='$50' items={`${items.join('; ')}`} />
-            <Sellingorder name='order 1' price='$50' items={`${items.join('; ')}`} />
+            <Sellingorder name='order 1' price='50 EGP' items={`${items.join('; ')}`} />
+            <Sellingorder name='order 2' price='50 EGP' items={`${items.join('; ')}`} />
+            <Sellingorder name='order 3' price='50 EGP' items={`${items.join('; ')}`} />
           </div>
         </div>
       </section>

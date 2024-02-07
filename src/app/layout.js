@@ -5,7 +5,6 @@ import './globals.css'
 import Bgimage from '../../public/bg.png'
 import Script from 'next/script'
 import { NextAuthProvider } from './providers'
-import WLogo from '../../public/ckwhite.svg'
 
 
 

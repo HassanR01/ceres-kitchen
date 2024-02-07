@@ -25,7 +25,7 @@ export default async function ItemsList() {
     return (
         <>
             {items.length > 0 && items.map(item => (
-                <Link href={`/menu/${item._id}`} className={`item ${item.category} active`} key={item._id}>
+                <Link href={`/menu/${item._id}`} className={`item ${item.category} ${item.status} active`} key={item._id}>
                     <div className="image">
                         <Image src={item.image} width={200} height={200} alt={item.title} />
                     </div>

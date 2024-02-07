@@ -82,7 +82,7 @@ export default function AddOrder({ totalPrice }) {
                     <h2>{totalPrice} EGP</h2>
                     <div className='paymethod'>
                         <input type="radio" id='handPay' value='hand_pay' name='pay_Method' onChange={(e) => setPayMethod(e.target.value)} />
-                        <label htmlFor='handPay'>Hand Pay</label>
+                        <label htmlFor='handPay'>Cash on Delivery</label>
                         <input type="radio" id='payOnline' value='pay_online' name='pay_Method' onChange={(e) => setPayMethod(e.target.value)} />
                         <label htmlFor='payOnline'>Pay Online</label>
                     </div>

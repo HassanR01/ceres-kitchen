@@ -181,9 +181,9 @@ header .access ul li a .qNum {
 }
 
 header .access ul li a .qNum h4 {
-  display: table-cell; 
-  vertical-align: middle; 
-  text-align: center; 
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
   font-size: 1.1rem;
   margin: 5px;
 }
@@ -344,7 +344,6 @@ header .brgIcon span:nth-child(3) {
 }
 
 @media (max-width: 800px) {
-  
   #home .text img {
     width: 200px;
   }
@@ -430,6 +429,10 @@ header .brgIcon span:nth-child(3) {
   display: flex;
 }
 
+#itemsMenuHP .items .item.hide {
+  display: none !important;
+}
+
 #itemsMenuHP .items .item:hover {
   background-color: rgb(221, 226, 230);
   box-shadow: 0 0 20px 5px #000000;
@@ -440,7 +443,7 @@ header .brgIcon span:nth-child(3) {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: calc(100% - 115px);
+  height: calc(100% - 95px);
 }
 
 #itemsMenuHP .items .item .image img {
@@ -454,7 +457,7 @@ header .brgIcon span:nth-child(3) {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 20px;
+  padding: 10px 20px;
   width: 100%;
 }
 
@@ -527,11 +530,10 @@ header .brgIcon span:nth-child(3) {
   border: 2px solid var(--Garn-color);
 }
 
-@media (max-width: 430px ) {
+@media (max-width: 430px) {
   #itemsMenuHP .filters ul li {
     min-width: 125px !important;
     font-size: 0.8rem !important;
-
   }
 
   #itemsMenuHP .items .item {
@@ -568,25 +570,24 @@ header .brgIcon span:nth-child(3) {
     align-items: center;
     justify-content: center;
   }
-  
+
   #itemsMenuHP .items .item {
     height: 300px;
     min-width: 400px;
     width: 300px;
   }
-  
+
   #itemsMenuHP .items .item .image {
     height: calc(100% - 100px);
   }
-  
+
   #itemsMenuHP .items .item .text h3 {
     font-size: 1.3rem;
   }
-  
+
   #itemsMenuHP .items .item .text h5 {
     font-size: 1.3rem;
   }
-
 }
 
 @media (max-width: 1570px) {
@@ -912,8 +913,8 @@ footer .copyright a:hover {
 }
 
 #cursor {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -924,6 +925,10 @@ footer .copyright a:hover {
   border-radius: 50%;
   z-index: 100;
   transition: 0.1s;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
