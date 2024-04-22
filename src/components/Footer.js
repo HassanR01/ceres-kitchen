@@ -15,7 +15,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="copyright">
-        <p>Copyright &copy; <span className={'copyrightY'}></span> <Link href={'https://rockaidev.vercel.app'} target="_blank">Rockai Dev</Link> | All rights reseved.</p>
+        <p>Copyright &copy; <span className={'copyrightY'}></span> <Link href={'https://www.rockaidev.com'} target="_blank">Rockai Dev</Link> | All rights reseved.</p>
       </div>
       <Script src="JS/main.js" />
     </footer>

@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 export default function SendToBasket({ title, price, image }) {
     const [Cart, setCart] = useState([])
     const { status, data: session } = useSession()
-    const [quantity, setQuantity] = useState("")
+    const [quantity, setQuantity] = useState(1)
     const [alerting, setalerting] = useState('')
     const basket = { quantity, title, price, image }
     price = price * quantity
@@ -18,7 +18,7 @@ export default function SendToBasket({ title, price, image }) {
     }, [])
 
     const increase = () => {
-        setQuantity(+quantity + 1)
+        setQuantity(quantity + 1)
         setalerting('')
     }
 

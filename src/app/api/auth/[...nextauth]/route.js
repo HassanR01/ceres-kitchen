@@ -12,14 +12,14 @@ const authOptions = {
     ],
     callbacks: {
         async signIn({ user, account }) {
-            
+
             if (account.provider === 'google') {
                 const { name, email, orders, basket, passwrord, role } = user
                 const apiUrl = process.env.API_URL
                 try {
                     await connectMongoDB();
-                    const userExist = await User.findOne({email})
-                    
+                    const userExist = await User.findOne({ email })
+
                     if (!userExist) {
 
                         const res = await fetch(`${apiUrl}/api/users`, {
@@ -28,7 +28,7 @@ const authOptions = {
                                 "Content-type": "applicaiton/json"
                             },
                             body: JSON.stringify({
-                                 name, email, orders, basket, passwrord, role 
+                                name, email, orders, basket, passwrord, role
                             }),
                         });
                         if (res.ok) {
@@ -39,7 +39,7 @@ const authOptions = {
                     console.log(error);
                 }
             }
-            
+
             return user
         }
     }
@@ -47,4 +47,4 @@ const authOptions = {
 
 const handler = NextAuth(authOptions)
 
-export {handler as GET , handler as POST}
+export { handler as GET, handler as POST }

@@ -2,9 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-// import User from '@/models/users';
-// import connectMongoDB from '@/libs/mongodb';
-// import { useRouter } from 'next/router';
+
 
 export default function LoginForm() {
     const [email, setEmail] = useState('');
@@ -12,34 +10,6 @@ export default function LoginForm() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-
-        // if (!email, !password) {
-        //     alert('Email And Password Are Required!')
-        //     return
-        // } else {
-        //     await connectMongoDB();
-        //     const userExist = await User.findOne({ email })
-
-        //     if (!userExist) {
-        //         const res = await fetch('/api/users', {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-type": "applicaiton/json"
-        //             },
-        //             body: JSON.stringify({
-        //                 email,
-        //                 password,
-        //             }),
-        //         });
-
-        //         if (res.ok) {
-        //             useRouter().push(`/profile/${email}`)
-        //         } else {
-        //             throw new Error('Faild To Create The Order')
-        //         }
-        //     }
-
-        // }
 
         console.log('Email:', email);
         console.log('Password:', password);
