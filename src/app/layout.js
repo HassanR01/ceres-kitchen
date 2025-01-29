@@ -4,7 +4,6 @@ import Header from '../components/Header'
 import './globals.css'
 import Bgimage from '../../public/bg.png'
 import Script from 'next/script'
-import { NextAuthProvider } from './providers'
 import { Analytics } from '@vercel/analytics/react';
 
 
@@ -45,14 +44,12 @@ export default async function RootLayout({ children }) {
       <body suppressHydrationWarning={true} style={{
         backgroundImage: `url(${Bgimage.src})`,
       }}>
-        <NextAuthProvider>
           <Header admins={admin} />
           {children}
           <Cursor />
           <Footer />
           <Script src='JS/main.js' strategy='afterInteractive' />
           <Analytics />
-        </NextAuthProvider>
       </body>
     </html>
   )
